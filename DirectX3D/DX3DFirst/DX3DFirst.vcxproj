@@ -104,11 +104,18 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <PrecompiledHeaderFile>framework.h</PrecompiledHeaderFile>
+      <AdditionalIncludeDirectories>../;./;_include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>_Library</AdditionalLibraryDirectories>
     </Link>
+    <FxCompile>
+      <ShaderModel>5.0</ShaderModel>
+    </FxCompile>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
@@ -127,13 +134,55 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Render\Mesh.h" />
+    <ClInclude Include="Render\Material.h" />
+    <ClInclude Include="Object\Basic\Cube.h" />
+    <ClInclude Include="Render\Buffer\GlobalBuffer.h" />
+    <ClInclude Include="Render\Buffer\ConstBuffer.h" />
+    <ClInclude Include="Render\Buffer\IndexBuffer.h" />
+    <ClInclude Include="System\Environment.h" />
+    <ClInclude Include="Render\Shader\PixelShader.h" />
+    <ClInclude Include="Render\Shader\Shader.h" />
+    <ClInclude Include="System\Device.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="Framework.h" />
+    <ClInclude Include="MainGame.h" />
+    <ClInclude Include="Scene\Scene.h" />
+    <ClInclude Include="Scene\TutorialScene.h" />
+    <ClInclude Include="Object\Transform.h" />
+    <ClInclude Include="Utility\Keyboard.h" />
+    <ClInclude Include="Utility\Singleton.h" />
+    <ClInclude Include="Render\Shader\VertexShader.h" />
+    <ClInclude Include="Render\Buffer\VertexBuffer.h" />
+    <ClInclude Include="Render\Buffer\VertexLayout.h" />
+    <ClInclude Include="Utility\Time.h" />
+    <ClInclude Include="Utility\Vector3.h" />
     <ClInclude Include="__Others\Resource.h" />
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Render\Mesh.cpp" />
+    <ClCompile Include="Render\Material.cpp" />
+    <ClCompile Include="Object\Basic\Cube.cpp" />
+    <ClCompile Include="Render\Buffer\ConstBuffer.cpp" />
+    <ClCompile Include="Render\Buffer\IndexBuffer.cpp" />
+    <ClCompile Include="System\Environment.cpp" />
+    <ClCompile Include="Render\Shader\PixelShader.cpp" />
+    <ClCompile Include="Render\Shader\Shader.cpp" />
+    <ClCompile Include="System\Device.cpp" />
+    <ClCompile Include="Framework.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="Main.cpp" />
+    <ClCompile Include="MainGame.cpp" />
+    <ClCompile Include="Scene\Scene.cpp" />
+    <ClCompile Include="Scene\TutorialScene.cpp" />
+    <ClCompile Include="Render\Shader\VertexShader.cpp" />
+    <ClCompile Include="Render\Buffer\VertexBuffer.cpp" />
+    <ClCompile Include="Object\Transform.cpp" />
+    <ClCompile Include="Utility\Keyboard.cpp" />
+    <ClCompile Include="Utility\Time.cpp" />
+    <ClCompile Include="Utility\Vector3.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="__Others\DX3DFirst.rc" />
@@ -141,6 +190,20 @@
   <ItemGroup>
     <Image Include="__Others\DX3DFirst.ico" />
     <Image Include="__Others\small.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="_Shader\PixelTutorial.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="_Shader\VertexTutorial.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
+    </FxCompile>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

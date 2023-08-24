@@ -2,10 +2,17 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\user\Desktop\SJHGit\DirectX3D\x64\Debug\DX3DFirst.exe</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\DX3DFirst.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
-  <ContentFiles />
+  <ContentFiles>
+    <ContentFile>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelTutorial.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexTutorial.cso</FullPath>
+    </ContentFile>
+  </ContentFiles>
   <SatelliteDlls />
   <NonRecipeFileRefs />
 </Project>

@@ -10,11 +10,74 @@
 #include <windows.h>
 
 #include <d3d11.h>
+#include <d3dcompiler.h>
+#include <DirectXMath.h>
+#include <vector>
+#include <map>
+#include <unordered_map>
+#include <string>
+#include <functional>
 
 #pragma comment(lib, "d3d11.lib")
+#pragma comment(lib, "d3dcompiler.lib")
+//라이브러리는 cpp파일이 없거나 기본 설정으로 읽어오지 않을 때 사용한다.
+//라이브러리는 cpp를 기계어로 번역된 파일
+
+using namespace std;
+using namespace DirectX;
+
+#include "imgui.h"
+#include "imgui_impl_win32.h"
+#include "imgui_impl_dx11.h"
+
+#pragma comment(lib, "ImGui.lib")
 
 #define WIN_WIDTH 1280.0f
 #define	WIN_HEIGHT 720.0f
+
+#define DEVICE Device::GetInstance()->GetDevice()
+#define DC	   Device::GetInstance()->GetDeviceContext()
+
+#define KEY_UP(p)	 Keyboard::GetInstance()->Up(p)
+#define KEY_DOWN(p)	 Keyboard::GetInstance()->Down(p)
+#define KEY_PRESS(p) Keyboard::GetInstance()->Press(p)
+
+typedef XMMATRIX Matrix;
+typedef XMFLOAT4 Vector4;
+
+#include "Utility/Singleton.h"
+#include "Utility/Vector3.h"
+#include "Utility\Keyboard.h"
+#include "Utility\Time.h"
+#include "Object/Transform.h"
+
+#include "System/Device.h"
+
+#include "Render/Shader/Shader.h"
+#include "Render/Shader/VertexShader.h"
+#include "Render/Shader/PixelShader.h"
+#include "Render/Material.h"
+
+#include "Render/Buffer/VertexLayout.h"
+#include "Render/Buffer/VertexBuffer.h"
+#include "Render/Buffer/IndexBuffer.h"
+#include "Render/Buffer/ConstBuffer.h"
+#include "Render/Buffer/GlobalBuffer.h"
+#include "Render/Mesh.h"
+
+
+#include "System/Environment.h"
+
+#include "Object/Basic\Cube.h"
+
+#include "Scene/Scene.h"
+#include "Scene/TutorialScene.h"
+
+#include "MainGame.h"
+
+
+extern HWND _hWnd;
+
 
 //UI 사용자가 컴퓨터에 명령을 내릴 수 있게 하는 것
 

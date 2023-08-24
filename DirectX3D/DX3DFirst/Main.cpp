@@ -5,23 +5,10 @@
 #include "Main.h"
 
 #define MAX_LOADSTRING 100
-
-// 전역 변수:
-ID3D11Device*           _device;                        // CPU를 다루는 객체, 무언가를 만들 때
-ID3D11DeviceContext*    _deviceContext;                 // GPU를 다루는 객체, 무언가를 그릴 때
-
-IDXGISwapChain* _swapChain;                             //더블버퍼를 구현하는 방식 중 하나
-ID3D11RenderTargetView* _renderTargetView;              //view가 들어가면 전부 GPU 관련, 백버퍼를 관리한다. PIP(picture in picture) 화면안에 화면 보여주는 것
-                                                        //미니맵, 렌더타겟은 카메라 1개와 같다. 총 8개까지 가능하다
-
-HWND hWnd;
+HWND _hWnd;
 HINSTANCE hInst;                                        // 현재 인스턴스입니다.
 WCHAR szTitle[MAX_LOADSTRING];                          // 제목 표시줄 텍스트입니다.
 WCHAR szWindowClass[MAX_LOADSTRING];                    // 기본 창 클래스 이름입니다.
-
-void Initialize();
-void Release();
-void Render();
 
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
 ATOM                MyRegisterClass(HINSTANCE hInstance);
@@ -53,7 +40,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
     HACCEL hAccelTable = LoadAccelerators(hInstance, MAKEINTRESOURCE(IDC_DX3DFIRST));
 
     MSG msg;
-    Initialize();
+    MainGame* game = new MainGame();
 
     while (true)
     {
@@ -70,47 +57,47 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,
         }
         else
         {
-            Render();
+            game->Update();
+            game->Render();
         }
     }
 
-    Release();
-
+    delete game;
     return (int) msg.wParam;
 }
 
+//렌더링 파이프라인
+//
+// hlsl -> high level shader language (GPU를 다루는 언어)
+// shader -> 프로그래머가 hlsl로 다룰 수 있다
+// shader가 붙지 않는 것 -> 프로그래머가 내부적으로 건들 수 없는 것들
+// 
+//Input Assembler : 입력된 데이터를 모으는 과정 GPU가 CPU에서 데이터를 가져오는 과정
+// Vertex Shader : 각 정점 데이터를 wvp 변환 
+// w변환 -> 로컬 좌표계를 월드 좌표계로
+// v변환 -> 월드 좌표계를 카메라 좌표계로 (카메라 기준으로)
+// p변환 -> 눈에 보이고 보이지 않는 걸 구분 (보이는 영역만 화면에 가져와서 2D 영역으로 바꾸기 위한 연산을 하고 RS에 보내준다)
+// Orthographic, perspective 2가지 존재
+// 
+// 
+// Hull Shader
+// Tesselation Stage
+// Domain Shader
+// Geometry Shader
+// Rasterize State : 정점 정보(3D)를 2D(화면 좌표계)로 변환
+// Pixel Shader : 2D 공간에서 수행할 작업들을 수행하는 부분
+// Output Merger : 
+// 
+// VS 에선 3D에서 수행해야 하는 동작들 
+// PS 에선 2D에서도 수행 가능한 동작을
+// 뷰포트 : 화면에 보여지는 영역 (프로젝션 전 단계) 이 영역에서 프로젝션 연산으로 한 번 더 걸러진다.
+//
 
 
-void Initialize()
-{
-    DXGI_SWAP_CHAIN_DESC swapChainDesc = {};
-    swapChainDesc.BufferCount = 1;
-    swapChainDesc.BufferDesc.Width = WIN_WIDTH;
-    swapChainDesc.BufferDesc.Height = WIN_HEIGHT;
-    swapChainDesc.BufferDesc.Format = DXGI_FORMAT_R8G8B8A8_UNORM; //RGBA 8비트 4개, unorm = unsigned normal = 0 ~ 1
-    
-    swapChainDesc.BufferDesc.RefreshRate.Numerator      = 60;
-    swapChainDesc.BufferDesc.RefreshRate.Denominator    = 1;
-
-    swapChainDesc.BufferUsage = DXGI_USAGE_RENDER_TARGET_OUTPUT;
-    swapChainDesc.OutputWindow = hWnd;
-
-    //sampling : 표본화. 확대, 축소 연산의 값을 미리 계산해 도움을 준다. 계단현상을 없애준다.
-    swapChainDesc.SampleDesc.Count = 1;     //주변 픽셀 몇 개
-    swapChainDesc.SampleDesc.Quality = 0;   //범위는 얼마나
-    //AA : 안티엘리어싱 
-    //엘리어싱 : 계단현상
-
-    swapChainDesc.Windowed = true;
-}
-
-void Release()
-{
-}
-
-void Render()
-{
-}
+// 좌표계
+// NDC 좌표계 : Normalized Device Coordinate 가운데가 0,0 왼쪽이 - 오른쪽이 +인 화면을 비율로 사용하는 좌표계
+// 화면 크기가 바뀌면 출력물이 변경, 디테일한 이동이 어려워진다
+//
 
 //
 //  함수: MyRegisterClass()
@@ -156,7 +143,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    
    AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);
 
-   hWnd = CreateWindowW(
+   _hWnd = CreateWindowW(
        szWindowClass, 
        szTitle,
        WS_OVERLAPPEDWINDOW,
@@ -167,15 +154,15 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
        nullptr, nullptr, hInstance, nullptr
    );
 
-   SetMenu(hWnd, nullptr);
+   SetMenu(_hWnd, nullptr);
 
-   if (!hWnd)
+   if (!_hWnd)
    {
       return FALSE;
    }
 
-   ShowWindow(hWnd, nCmdShow);
-   UpdateWindow(hWnd);
+   ShowWindow(_hWnd, nCmdShow);
+   UpdateWindow(_hWnd);
 
    return TRUE;
 }
@@ -190,8 +177,13 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //  WM_DESTROY  - 종료 메시지를 게시하고 반환합니다.
 //
 //
+extern IMGUI_IMPL_API LRESULT ImGui_ImplWin32_WndProcHandler(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam);
+
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
+    if (ImGui_ImplWin32_WndProcHandler(hWnd, message, wParam, lParam))
+        return true;
+
     switch (message)
     {
     case WM_COMMAND:
