@@ -20,17 +20,24 @@
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "d3dcompiler.lib")
+//#pragma comment(lib, "")
 //라이브러리는 cpp파일이 없거나 기본 설정으로 읽어오지 않을 때 사용한다.
 //라이브러리는 cpp를 기계어로 번역된 파일
-
-using namespace std;
-using namespace DirectX;
 
 #include "imgui.h"
 #include "imgui_impl_win32.h"
 #include "imgui_impl_dx11.h"
 
 #pragma comment(lib, "ImGui.lib")
+
+using namespace std;
+using namespace DirectX;
+
+
+#include "DirectXTex.h"
+#include "DirectXTex.inl"
+
+#pragma comment(lib, "DirectXTex.lib")
 
 #define WIN_WIDTH 1280.0f
 #define	WIN_HEIGHT 720.0f
@@ -72,7 +79,7 @@ typedef XMFLOAT4 Vector4;
 
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"
-
+#include "Scene\TextureScene.h"
 #include "MainGame.h"
 
 

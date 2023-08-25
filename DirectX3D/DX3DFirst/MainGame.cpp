@@ -5,7 +5,7 @@ MainGame::MainGame()
 {
 	Initialize();
 
-	_scene = new TutorialScene();
+	_scene = new TextureScene();
 }
 
 MainGame::~MainGame()
