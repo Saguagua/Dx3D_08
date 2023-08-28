@@ -2,7 +2,8 @@
 #include "Cube.h"
 
 int Cube::_count = 0;
-Cube::Cube(Vector4 color)
+Cube::Cube(Vector4 color, Vector3 size)
+    :_size(size)
 {
     _material = new Material(L"Tutorial");
 
@@ -40,17 +41,18 @@ void Cube::Render()
 
 void Cube::CreateMesh(Vector4 color)
 {
+    Vector3 halfSize = _size * 0.5f;
     _vertices =
     {
-        VertexColor(color,{ -1.0f,  1.0f, -1.0f}),
-        VertexColor(color,{  1.0f,  1.0f, -1.0f}),
-        VertexColor(color,{ -1.0f, -1.0f, -1.0f}),
-        VertexColor(color,{  1.0f, -1.0f, -1.0f}),
+        VertexColor(color,{ -halfSize.x, +halfSize.y, -halfSize.z}),
+        VertexColor(color,{ +halfSize.x, +halfSize.y, -halfSize.z}),
+        VertexColor(color,{ -halfSize.x, -halfSize.y, -halfSize.z}),
+        VertexColor(color,{ +halfSize.x, -halfSize.y, -halfSize.z}),
 
-        VertexColor(color,{ -1.0f,  1.0f, 1.0f}),
-        VertexColor(color,{  1.0f,  1.0f, 1.0f}),
-        VertexColor(color,{ -1.0f, -1.0f, 1.0f}),
-        VertexColor(color,{  1.0f, -1.0f, 1.0f})
+        VertexColor(color,{ -halfSize.x, +halfSize.y, +halfSize.z}),
+        VertexColor(color,{ +halfSize.x, +halfSize.y, +halfSize.z}),
+        VertexColor(color,{ -halfSize.x, -halfSize.y, +halfSize.z}),
+        VertexColor(color,{ +halfSize.x, -halfSize.y, +halfSize.z})
     };
 
 

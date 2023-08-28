@@ -123,6 +123,9 @@
     <ClInclude Include="_Include\imstb_truetype.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\Robot\Robot.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -189,6 +192,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Quad.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Robot\Robot.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

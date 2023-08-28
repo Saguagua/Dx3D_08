@@ -2,7 +2,7 @@
 class Cube :public Transform
 {
 public:
-	Cube(Vector4 color);
+	Cube(Vector4 color, Vector3 size = Vector3(2,2,2));
 	~Cube();
 
 	void Update();
@@ -23,5 +23,7 @@ private:
 
 	static int _count;
 	string _label = "";
+
+	Vector3 _size = {2,2,2};
 };
 

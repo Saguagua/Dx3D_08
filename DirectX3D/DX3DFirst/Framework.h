@@ -20,6 +20,7 @@
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "d3dcompiler.lib")
+#pragma comment(lib, "dxguid.lib")
 //#pragma comment(lib, "")
 //라이브러리는 cpp파일이 없거나 기본 설정으로 읽어오지 않을 때 사용한다.
 //라이브러리는 cpp를 기계어로 번역된 파일
@@ -76,6 +77,8 @@ typedef XMFLOAT4 Vector4;
 #include "System/Environment.h"
 
 #include "Object/Basic\Cube.h"
+
+#include "Object/Robot/Robot.h"
 
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"
