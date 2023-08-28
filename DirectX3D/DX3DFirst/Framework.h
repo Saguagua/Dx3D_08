@@ -52,6 +52,7 @@ using namespace DirectX;
 
 typedef XMMATRIX Matrix;
 typedef XMFLOAT4 Vector4;
+typedef XMFLOAT2 Vector2;
 
 #include "Utility/Singleton.h"
 #include "Utility/Vector3.h"
@@ -73,10 +74,11 @@ typedef XMFLOAT4 Vector4;
 #include "Render/Buffer/GlobalBuffer.h"
 #include "Render/Mesh.h"
 
-
 #include "System/Environment.h"
 
 #include "Object/Basic\Cube.h"
+#include "Object/Basic/Quad.h"
+#include "Object\Basic\QuadCube.h"
 
 #include "Object/Robot/Robot.h"
 

@@ -96,7 +96,7 @@
     <ClInclude Include="Scene\TextureScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Quad.h">
+    <ClInclude Include="Object\Basic\Quad.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="_Include\imconfig.h">
@@ -124,6 +124,9 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Robot\Robot.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Basic\QuadCube.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -191,10 +194,13 @@
     <ClCompile Include="Scene\TextureScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Quad.cpp">
+    <ClCompile Include="Object\Basic\Quad.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Robot\Robot.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Basic\QuadCube.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
@@ -287,8 +293,8 @@
   <ItemGroup>
     <FxCompile Include="_Shader\VertexTutorial.hlsl" />
     <FxCompile Include="_Shader\PixelTutorial.hlsl" />
-    <FxCompile Include="_Shader\TextureVS.hlsl" />
-    <FxCompile Include="_Shader\TexturePS.hlsl" />
+    <FxCompile Include="_Shader\VertexTexture.hlsl" />
+    <FxCompile Include="_Shader\PixelTexture.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="_Library\DirectXTex.lib" />

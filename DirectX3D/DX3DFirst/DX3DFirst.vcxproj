@@ -134,7 +134,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="Quad.h" />
+    <ClInclude Include="Object\Basic\Quad.h" />
+    <ClInclude Include="Object\Basic\QuadCube.h" />
     <ClInclude Include="Render\Mesh.h" />
     <ClInclude Include="Render\Material.h" />
     <ClInclude Include="Object\Basic\Cube.h" />
@@ -173,7 +174,8 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Quad.cpp" />
+    <ClCompile Include="Object\Basic\Quad.cpp" />
+    <ClCompile Include="Object\Basic\QuadCube.cpp" />
     <ClCompile Include="Render\Mesh.cpp" />
     <ClCompile Include="Render\Material.cpp" />
     <ClCompile Include="Object\Basic\Cube.cpp" />
@@ -236,13 +238,13 @@
     <Image Include="__Others\small.ico" />
   </ItemGroup>
   <ItemGroup>
-    <FxCompile Include="_Shader\TexturePS.hlsl">
+    <FxCompile Include="_Shader\PixelTexture.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
     </FxCompile>
-    <FxCompile Include="_Shader\TextureVS.hlsl">
+    <FxCompile Include="_Shader\VertexTexture.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
