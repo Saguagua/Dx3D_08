@@ -1,8 +1,6 @@
 #include "Framework.h"
 #include "Time.h"
 
-Time* Time::_instance = nullptr;
-
 float Time::timeElapsed = 0.0;
 
 Time::Time()

@@ -47,6 +47,7 @@ void MainGame::Initialize()
 	 Environment::GetInstance();
 		Keyboard::GetInstance();
 			Time::GetInstance();
+	StateManager::GetInstance();
 
 	// Setup Dear ImGui context
 	IMGUI_CHECKVERSION();
@@ -68,6 +69,7 @@ void MainGame::Release()
 	Device::Delete();
 	Keyboard::Delete();
 	Time::Delete();
+	StateManager::Delete();
 
 	ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();

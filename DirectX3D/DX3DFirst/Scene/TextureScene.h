@@ -16,7 +16,7 @@ public:
 
 private:
 	Robot* _robot;
-	Quad* _quad;
+	TextureCube* _cube;
 	QuadCube* _quadCube;
 };
 

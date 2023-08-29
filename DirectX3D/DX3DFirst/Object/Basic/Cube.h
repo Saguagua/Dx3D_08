@@ -10,7 +10,6 @@ public:
 
 	void CreateMesh(Vector4 color);
 
-	void Debug();
 private:
 	Material* _material;
 	//Vertex/Index -> Mesh
@@ -22,7 +21,6 @@ private:
 	vector<UINT> _indices;
 
 	static int _count;
-	string _label = "";
 
 	Vector3 _size = {2,2,2};
 };

@@ -19,6 +19,8 @@ public:
 	Vector3		   Up() { return _up; }
 	Vector3		 Down() { return _up * -1; }
 
+	void Debug();
+	void SetLabel(string label) { this->_label = label; }
 public:
 	Vector3 _scale = {1.0f, 1.0f, 1.0f};
 	Vector3 _rotation = {0.0f, 0.0f, 0.0f};
@@ -26,6 +28,8 @@ public:
 
 protected:
 	Matrix _world;
+
+	string _label = "";
 	
 	Vector3 _pivot = {};
 

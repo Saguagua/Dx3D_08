@@ -13,11 +13,14 @@ public:
 
 	void SetMaterial();
 
+	void SetDiffuseMap(wstring file);
 
 private:
 
 	//Shader -> Material
 	VertexShader* _vertexShader;
 	PixelShader* _pixelShader;
+
+	Texture* _diffuseMap = nullptr; //diffuse -> 난반사 깊이감
 };
 

@@ -2,6 +2,7 @@
 #include "Cube.h"
 
 int Cube::_count = 0;
+
 Cube::Cube(Vector4 color, Vector3 size)
     :_size(size)
 {
@@ -79,24 +80,4 @@ void Cube::CreateMesh(Vector4 color)
     };
 
     _mesh = new Mesh(_vertices, _indices);
-}
-
-void Cube::Debug()
-{
-    if (ImGui::BeginMenu(_label.c_str()))
-    {
-        ImGui::DragFloat3("Scale",      (float*)&_scale,        0.01f, 0.01f, 100.0f);
-        
-        ImGui::SliderAngle("RotationX", &_rotation.x);
-        ImGui::SliderAngle("RotationY", &_rotation.y);
-        ImGui::SliderAngle("RotationZ", &_rotation.z);
-
-        // 오일러각은 구현하기 쉽지만 짐벌락 현상이 나타나 3D에선 사용할 수 없다
-        // 이에 대한 해결방법이 쿼터니언이다
-
-        //ImGui::DragFloat3("Rotation",   (float*)&_rotation,     0.01f, -XM_2PI, XM_2PI);
-        ImGui::DragFloat3("Translate",  (float*)&_translation,  0.01f, -WIN_WIDTH, WIN_WIDTH);
-
-        ImGui::EndMenu();
-    }
 }
