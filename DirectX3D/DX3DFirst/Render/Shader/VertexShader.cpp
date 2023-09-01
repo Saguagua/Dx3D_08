@@ -10,7 +10,7 @@ VertexShader::VertexShader(wstring path)
     (
         path.c_str(),
         nullptr,
-        nullptr,
+        D3D_COMPILE_STANDARD_FILE_INCLUDE,
         "main",
         "vs_5_0",
         flags,

@@ -1,3 +1,4 @@
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\System\Camera.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Camera.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\Quad.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Quad.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\QuadCube.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\QuadCube.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Mesh.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Mesh.obj
@@ -8,6 +9,7 @@ C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Buffer\IndexBuffer.
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Robot.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\State\SamplerState.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\SamplerState.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\State\StateManager.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\StateManager.obj
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\State\RasterizerState.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\RasterizerState.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\System\Environment.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Environment.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Shader\PixelShader.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\PixelShader.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Shader\Shader.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Shader.obj
@@ -23,6 +25,8 @@ C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Transform.cpp;C:\Us
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Scene\TextureScene.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\TextureScene.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Texture\Texture.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Texture.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\TextureCube.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\TextureCube.obj
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Scene\TerrianScene.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\TerrianScene.obj
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Terrian.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\Keyboard.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Keyboard.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\Time.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Time.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\Vector3.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Vector3.obj

@@ -7,8 +7,10 @@ private:
 	StateManager();
 	~StateManager();
 
-	void CreateSamplerState();
+	void    CreateSamplerState();
+	void CreateRasterizerState();
 
-	SamplerState* _samplerState = nullptr;
+	   SamplerState*    _samplerState = nullptr;
+	RasterizerState* _rasterizerState = nullptr;
 };
 

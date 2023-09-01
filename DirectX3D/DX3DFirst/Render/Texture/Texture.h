@@ -10,10 +10,14 @@ public:
 	
 	void PSSetShaderResoureces(UINT slot);
 
+	vector<Vector4> ReadPixels();
+	Vector2 GetSize() { return Vector2(_image.GetMetadata().width, _image.GetMetadata().height); }
 private:
 	ID3D11ShaderResourceView* _srv = nullptr;
 
 	ScratchImage _image;
+
+
 
 	static map<wstring, Texture*> _textures;
 };

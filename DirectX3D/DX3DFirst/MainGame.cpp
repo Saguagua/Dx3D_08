@@ -5,7 +5,7 @@ MainGame::MainGame()
 {
 	Initialize();
 
-	_scene = new TextureScene();
+	_scene = new TerrianScene();
 }
 
 MainGame::~MainGame()
@@ -17,6 +17,7 @@ void MainGame::Update()
 {
 	Keyboard::GetInstance()->Update();
 	Time::GetInstance()->Update();
+	Camera::GetInstance()->Update();
 	_scene->Update();
 }
 
@@ -31,9 +32,13 @@ void MainGame::Render()
 
 	Device::GetInstance()->Clear();
 
+	Environment::GetInstance()->SetEnvironment();
+
 	_scene->Render();
 
 	_scene->PostRender();
+	Camera::GetInstance()->PostRender();
+
 	ImGui::Render();
 
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
@@ -48,6 +53,7 @@ void MainGame::Initialize()
 		Keyboard::GetInstance();
 			Time::GetInstance();
 	StateManager::GetInstance();
+		Camera::GetInstance();
 
 	// Setup Dear ImGui context
 	IMGUI_CHECKVERSION();
@@ -70,6 +76,8 @@ void MainGame::Release()
 	Keyboard::Delete();
 	Time::Delete();
 	StateManager::Delete();
+	Camera::Delete();
+	Texture::Delete();
 
 	ImGui_ImplDX11_Shutdown();
 	ImGui_ImplWin32_Shutdown();

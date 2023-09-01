@@ -2,9 +2,9 @@
 
 #define V_LEFT		Vector3(-1.0f, +0.0f, +0.0f)
 #define V_RIGHT		Vector3(+1.0f, +0.0f, +0.0f)
-#define V_DOWN		Vector3(+0.0f, +0.0f, +0.0f)
+#define V_DOWN		Vector3(+0.0f, -1.0f, +0.0f)
 #define V_UP		Vector3(+0.0f, +1.0f, +0.0f)
-#define V_BACKWARD	Vector3(+0.0f, -1.0f, -1.0f)
+#define V_BACKWARD	Vector3(+0.0f, +0.0f, -1.0f)
 #define V_FORWARD	Vector3(+0.0f, +0.0f, +1.0f)
 
 struct Vector3
@@ -41,6 +41,16 @@ struct Vector3
 
 	void Normalize() { *this = XMVector3Normalize(*this); }
 	Vector3 GetNormalized() { return XMVector3Normalize(*this); }
+
+	static Vector3 Cross(Vector3& v1, Vector3 v2) 
+	{
+		return XMVector3Cross(v1, v2);
+	}
+
+	static float Dot(Vector3& v1, Vector3 v2)
+	{
+		return XMVectorGetX(XMVector3Dot(v1, v2));
+	}
 
 	Vector3 operator+ (const Vector3& other) { return Vector3(x + other.x, y + other.y, z + other.z); }
 	Vector3 operator- (const Vector3& other) { return Vector3(x - other.x, y - other.y, z - other.z); }

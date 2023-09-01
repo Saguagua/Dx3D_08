@@ -77,8 +77,10 @@ typedef XMFLOAT2 Vector2;
 
 #include "Render/Mesh.h"
 #include "Render\State\SamplerState.h"
+#include "Render\State\RasterizerState.h"
 #include "Render\State\StateManager.h"
 
+#include "System\Camera.h"
 #include "System/Environment.h"
 
 #include "Object/Basic\Cube.h"
@@ -86,15 +88,19 @@ typedef XMFLOAT2 Vector2;
 #include "Object\Basic\QuadCube.h"
 #include "Object\Basic\TextureCube.h"
 
+#include "Object\LandScape\Terrian.h"
+
 #include "Object/Robot/Robot.h"
 
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"
 #include "Scene\TextureScene.h"
+#include "Scene\TerrianScene.h"
 #include "MainGame.h"
 
 
 extern HWND _hWnd;
+extern Vector3 _mousePos;
 
 
 //UI 사용자가 컴퓨터에 명령을 내릴 수 있게 하는 것

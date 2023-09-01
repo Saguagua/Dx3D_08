@@ -13,6 +13,7 @@ SamplerState samp   : register(s0);
 float4 main(VertexOutput input) : SV_TARGET
 {
     float4 tex = map.Sample(samp, input.uv);
+    
     return tex;
 }
 

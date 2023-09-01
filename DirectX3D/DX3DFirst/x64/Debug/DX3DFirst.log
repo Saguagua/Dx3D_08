@@ -1,2 +1,144 @@
-﻿  TextureCube.cpp
+﻿C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\_Shader\VertexDiffuse.hlsl(10,17-44): warning X3578: Output value 'main' is not completely initialized
+  
+  compilation object save succeeded; see C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexDiffuse.cso
+  Framework.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Texture\Texture.h(14,85): warning C4244: '인수': 'const size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Texture\Texture.h(14,57): warning C4244: '인수': 'const size_t'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Main.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Main.cpp(145,21): warning C4838: 'float'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Main.cpp(145,21): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Main.cpp(145,31): warning C4838: 'float'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Main.cpp(145,31): warning C4244: '초기화 중': 'float'에서 'LONG'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  MainGame.cpp
+  Cube.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\Cube.cpp(40,34): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Buffer\VertexBuffer.h(26,47): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Mesh.h(20,35): message : 컴파일되는 함수 템플릿 인스턴스화 'VertexBuffer::VertexBuffer<VertexColor>(std::vector<VertexColor,std::allocator<VertexColor>> &)'에 대한 참조를 확인하세요.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\Cube.cpp(82,21): message : 컴파일되는 함수 템플릿 인스턴스화 'Mesh::Mesh<VertexColor>(std::vector<VertexColor,std::allocator<VertexColor>> &,std::vector<UINT,std::allocator<UINT>> &)'에 대한 참조를 확인하세요.
+  Quad.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\Quad.cpp(49,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Buffer\VertexBuffer.h(26,47): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Mesh.h(20,35): message : 컴파일되는 함수 템플릿 인스턴스화 'VertexBuffer::VertexBuffer<VertexTexture>(std::vector<VertexTexture,std::allocator<VertexTexture>> &)'에 대한 참조를 확인하세요.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\Quad.cpp(25,18): message : 컴파일되는 함수 템플릿 인스턴스화 'Mesh::Mesh<VertexTexture>(std::vector<VertexTexture,std::allocator<VertexTexture>> &,std::vector<UINT,std::allocator<UINT>> &)'에 대한 참조를 확인하세요.
+  QuadCube.cpp
+  TextureCube.cpp
+  Terrian.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(34,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(39,33): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(40,32): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(57,15): warning C4244: '초기화 중': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(69,29): warning C4244: '인수': 'float'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=UINT
+          ]
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(70,29): warning C4244: '인수': 'float'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=UINT
+          ]
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(71,29): warning C4244: '인수': 'float'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=UINT
+          ]
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(73,29): warning C4244: '인수': 'float'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=UINT
+          ]
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(74,29): warning C4244: '인수': 'float'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=UINT
+          ]
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(75,29): warning C4244: '인수': 'float'에서 '_Ty'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+          with
+          [
+              _Ty=UINT
+          ]
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Buffer\VertexBuffer.h(26,47): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Mesh.h(20,35): message : 컴파일되는 함수 템플릿 인스턴스화 'VertexBuffer::VertexBuffer<VertexTextureNoraml>(std::vector<VertexTextureNoraml,std::allocator<VertexTextureNoraml>> &)'에 대한 참조를 확인하세요.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrian.cpp(17,18): message : 컴파일되는 함수 템플릿 인스턴스화 'Mesh::Mesh<VertexTextureNoraml>(std::vector<VertexTextureNoraml,std::allocator<VertexTextureNoraml>> &,std::vector<UINT,std::allocator<UINT>> &)'에 대한 참조를 확인하세요.
+  Robot.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(79,65): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(79,60): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(79,55): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(87,44): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(87,39): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(87,34): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(100,74): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(100,69): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(100,64): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(108,75): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(108,70): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(108,65): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(118,78): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(118,68): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(125,69): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(125,64): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(125,59): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(141,79): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(141,74): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(141,69): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(154,79): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(154,74): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(154,69): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(162,72): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(162,67): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(162,62): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(169,73): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(169,68): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(169,63): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(185,79): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(185,74): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(185,69): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(197,80): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(197,75): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(197,70): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(230,68): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(244,69): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(255,69): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(264,72): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(264,62): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(272,72): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(272,62): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(308,72): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(308,62): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(316,72): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Robot\Robot.cpp(316,62): warning C4305: '인수': 'double'에서 'float'(으)로 잘립니다.
+  Transform.cpp
+  ConstBuffer.cpp
+  IndexBuffer.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Buffer\IndexBuffer.cpp(7,41): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  VertexBuffer.cpp
+  Material.cpp
+  Mesh.cpp
+  PixelShader.cpp
+  Shader.cpp
+  VertexShader.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Shader\VertexShader.cpp(98,26): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  RasterizerState.cpp
+  SamplerState.cpp
+  StateManager.cpp
+  코드를 생성하고 있습니다...
+  컴파일하고 있습니다...
+  Texture.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Texture\Texture.cpp(59,12): warning C4244: '초기화 중': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene.cpp
+  TerrianScene.cpp
+  TextureScene.cpp
+  TutorialScene.cpp
+  Camera.cpp
+  Device.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\System\Device.cpp(23,38): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\System\Device.cpp(24,39): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\System\Device.cpp(73,34): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\System\Device.cpp(74,34): warning C4244: '=': 'float'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Environment.cpp
+  Keyboard.cpp
+  Time.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\Time.cpp(13,18): warning C4244: '=': 'double'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Vector3.cpp
+  코드를 생성하고 있습니다...
   DX3DFirst.vcxproj -> C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\DX3DFirst.exe
