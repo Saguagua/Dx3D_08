@@ -87,6 +87,9 @@ typedef XMFLOAT2 Vector2;
 #include "Object/Basic/Quad.h"
 #include "Object\Basic\QuadCube.h"
 #include "Object\Basic\TextureCube.h"
+#include "Object/Basic/DiffuseCube.h"
+#include "Object/Basic/Cylinder.h"
+#include "Object/Basic/Sphere.h"
 
 #include "Object\LandScape\Terrian.h"
 

@@ -18,5 +18,7 @@ private:
 	Robot* _robot;
 	TextureCube* _cube;
 	QuadCube* _quadCube;
+	Cylinder* _cylinder;
+	Sphere* _sphere;
 };
 

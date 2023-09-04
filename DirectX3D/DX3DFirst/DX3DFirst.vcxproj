@@ -134,6 +134,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Object\Basic\Cylinder.h" />
+    <ClInclude Include="Object\Basic\DiffuseCube.h" />
+    <ClInclude Include="Object\Basic\Sphere.h" />
     <ClInclude Include="System\Camera.h" />
     <ClInclude Include="Object\Basic\Quad.h" />
     <ClInclude Include="Object\Basic\QuadCube.h" />
@@ -182,6 +185,9 @@
     <ClInclude Include="__Others\targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Object\Basic\Cylinder.cpp" />
+    <ClCompile Include="Object\Basic\DiffuseCube.cpp" />
+    <ClCompile Include="Object\Basic\Sphere.cpp" />
     <ClCompile Include="System\Camera.cpp" />
     <ClCompile Include="Object\Basic\Quad.cpp" />
     <ClCompile Include="Object\Basic\QuadCube.cpp" />
@@ -254,6 +260,12 @@
     <Image Include="__Others\small.ico" />
   </ItemGroup>
   <ItemGroup>
+    <FxCompile Include="_Shader\PixelColorDiffuse.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
     <FxCompile Include="_Shader\PixelDiffuse.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
@@ -265,6 +277,12 @@
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Pixel</ShaderType>
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Pixel</ShaderType>
+    </FxCompile>
+    <FxCompile Include="_Shader\VertexColorDiffuse.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Vertex</ShaderType>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Vertex</ShaderType>
     </FxCompile>
     <FxCompile Include="_Shader\VertexDiffuse.hlsl">
       <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Vertex</ShaderType>

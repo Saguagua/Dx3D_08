@@ -6,7 +6,7 @@ Camera::Camera()
 	_viewBuffer = new MatrixBuffer();
 	_transform = new Transform();
 
-	_transform->_translation = { 120.0f, 150.0f, -100.0f };
+	_transform->_translation = { 0.0f, 10.0f, -10.0f };
 	_transform->_rotation.x = 0.6f;
 }
 

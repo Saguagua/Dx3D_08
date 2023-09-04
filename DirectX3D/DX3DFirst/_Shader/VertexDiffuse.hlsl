@@ -11,16 +11,16 @@ VertexOutput main(VertexTextureNormal input)
 {
     VertexOutput result;
     
-    result.position = mul(input.position, world);
+    result.position = mul(input.pos, world);
     result.position = mul(result.position, view);
-    result.position = mul(result.position, projection);
+    result.position = mul(result.position, proj);
     
     result.uv = input.uv;
     
-    //float3 light = normalize(-lightDirection);
-    //float3 normalize = normalize(mul(input.normal, (float3x3)world));
+    float3 L = normalize(-lightDirection);
+    float3 N = normalize(mul(input.normal, (float3x3)world));
     
-    //result.diffuse = normalize;
+    result.diffuse = dot(N, L);
     
     return result;
 }

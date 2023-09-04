@@ -153,6 +153,15 @@
     <ClInclude Include="Object\LandScape\Terrian.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Object\Basic\DiffuseCube.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Basic\Cylinder.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Object\Basic\Sphere.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -251,6 +260,15 @@
     <ClCompile Include="Object\LandScape\Terrian.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Object\Basic\DiffuseCube.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Basic\Cylinder.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Object\Basic\Sphere.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="__Others\DX3DFirst.rc">
@@ -345,6 +363,8 @@
     <FxCompile Include="_Shader\PixelTexture.hlsl" />
     <FxCompile Include="_Shader\VertexDiffuse.hlsl" />
     <FxCompile Include="_Shader\PixelDiffuse.hlsl" />
+    <FxCompile Include="_Shader\VertexColorDiffuse.hlsl" />
+    <FxCompile Include="_Shader\PixelColorDiffuse.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="_Library\DirectXTex.lib" />

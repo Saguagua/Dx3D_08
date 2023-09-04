@@ -11,7 +11,7 @@ private:
 	void CreateMesh();
 	void CreateNormal();
 
-	vector<VertexTextureNoraml> _vertices;
+	vector<VertexTextureNormal> _vertices;
 	vector<UINT> _indices;
 
 	Material* _material;

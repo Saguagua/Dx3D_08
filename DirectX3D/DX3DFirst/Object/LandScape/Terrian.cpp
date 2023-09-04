@@ -46,7 +46,7 @@ void Terrian::CreateMesh()
 	{
 		for (float x = 0; x < _width; x++)
 		{
-			VertexTextureNoraml vertex;
+			VertexTextureNormal vertex;
 
 			vertex._pos = Vector3(x, 0, z);
 

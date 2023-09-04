@@ -70,13 +70,13 @@ void Robot::Initialize()
 {
 	//body
 	{
-		Cube* body = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(2.5, 1.5, 2));
+		DiffuseCube* body = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(2.5, 1.5, 2));
 
 		_parts.push_back(body);
 	}
 	//neck
 	{
-		Cube* neck = new Cube(XMFLOAT4(1, 1, 0, 1), Vector3(0.3, 0.3, 0.3));
+		DiffuseCube* neck = new DiffuseCube(XMFLOAT4(1, 1, 0, 1), Vector3(0.3, 0.3, 0.3));
 		neck->_translation.y = 1;
 		neck->SetParent(_parts[P_BODY]);
 
@@ -84,7 +84,7 @@ void Robot::Initialize()
 	}
 	//head
 	{
-		Cube* head = new Cube(XMFLOAT4(0.3, 0.3, 0.3, 1), Vector3(2, 1, 1.5));
+		DiffuseCube* head = new DiffuseCube(XMFLOAT4(0.3, 0.3, 0.3, 1), Vector3(2, 1, 1.5));
 		Transform* neckToHead = new Transform();
 
 		neckToHead->SetParent(_parts[P_NECK]);
@@ -97,7 +97,7 @@ void Robot::Initialize()
 	}
 	//eye
 	{
-		Cube* leftEye = new Cube(XMFLOAT4(1.0, 0.0, 0.0, 1), Vector3(0.4, 0.2, 0.1));
+		DiffuseCube* leftEye = new DiffuseCube(XMFLOAT4(1.0, 0.0, 0.0, 1), Vector3(0.4, 0.2, 0.1));
 
 		leftEye->SetParent(_parts[P_HEAD]);
 		leftEye->_translation.z = 0.8f;
@@ -105,7 +105,7 @@ void Robot::Initialize()
 
 		_parts.push_back(leftEye);
 
-		Cube* rightEye = new Cube(XMFLOAT4(1.0, 0.0, 0.0, 1), Vector3(0.4, 0.2, 0.1));
+		DiffuseCube* rightEye = new DiffuseCube(XMFLOAT4(1.0, 0.0, 0.0, 1), Vector3(0.4, 0.2, 0.1));
 
 		rightEye->SetParent(_parts[P_HEAD]);
 		rightEye->_translation.z = 0.8f;
@@ -115,14 +115,14 @@ void Robot::Initialize()
 	}
 	//antenna
 	{
-		Cube* antennaB = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.1, 0.5, 0.1));
+		DiffuseCube* antennaB = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.1, 0.5, 0.1));
 
 		antennaB->SetParent(_parts[P_HEAD]);
 		antennaB->_translation.y = 0.7f;
 
 		_parts.push_back(antennaB);
 
-		Cube* antennaH = new Cube(XMFLOAT4(1, 0, 0, 1), Vector3(0.2, 0.1, 0.2));
+		DiffuseCube* antennaH = new DiffuseCube(XMFLOAT4(1, 0, 0, 1), Vector3(0.2, 0.1, 0.2));
 
 		antennaH->SetParent(_parts[P_HEAD]);
 		antennaH->_translation.y = 1.0f;
@@ -138,7 +138,7 @@ void Robot::Initialize()
 		lSlot->SetParent(_parts[P_BODY]);
 		_slots.push_back(lSlot);
 
-		Cube* lShoulder = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.9, 0.7, 0.7));
+		DiffuseCube* lShoulder = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.9, 0.7, 0.7));
 
 		lShoulder->SetParent(lSlot);
 
@@ -151,7 +151,7 @@ void Robot::Initialize()
 		rSlot->SetParent(_parts[P_BODY]);
 		_slots.push_back(rSlot);
 
-		Cube* rShoulder = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.9, 0.7, 0.7));
+		DiffuseCube* rShoulder = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.9, 0.7, 0.7));
 
 		rShoulder->SetParent(rSlot);
 
@@ -159,14 +159,14 @@ void Robot::Initialize()
 	}
 
 	{
-		Cube* lUpperArm = new Cube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 0.7, 0.4));
+		DiffuseCube* lUpperArm = new DiffuseCube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 0.7, 0.4));
 		lUpperArm->_translation.y = -0.7f;
 		lUpperArm->_translation.x = -0.05f;
 		lUpperArm->SetParent(_parts[P_LEFT_SHOULDER]);
 
 		_parts.push_back(lUpperArm);
 
-		Cube* rUpperArm = new Cube(XMFLOAT4(1, 1, 0.25, 1), Vector3(0.4, 0.7, 0.4));
+		DiffuseCube* rUpperArm = new DiffuseCube(XMFLOAT4(1, 1, 0.25, 1), Vector3(0.4, 0.7, 0.4));
 		rUpperArm->_translation.y = -0.7f;
 		rUpperArm->_translation.x = 0.05f;
 		rUpperArm->SetParent(_parts[P_RIGHT_SHOULDER]);
@@ -182,7 +182,7 @@ void Robot::Initialize()
 
 		_slots.push_back(lSlot);
 
-		Cube* leftElbow = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.7, 0.7, 0.7));
+		DiffuseCube* leftElbow = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.7, 0.7, 0.7));
 		leftElbow->_translation.y = -0.6f;
 		leftElbow->SetParent(_parts[P_LEFT_UPPER_ARM]);
 
@@ -194,7 +194,7 @@ void Robot::Initialize()
 
 		_slots.push_back(rSlot);
 
-		Cube* rightElbow = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.7, 0.7, 0.7));
+		DiffuseCube* rightElbow = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.7, 0.7, 0.7));
 		rightElbow->_translation.y -= 0.6f;
 		rightElbow->SetParent(_parts[P_RIGHT_UPPER_ARM]);
 
@@ -203,13 +203,13 @@ void Robot::Initialize()
 
 	//UnderArm
 	{
-		Cube* lUnderArm = new Cube(XMFLOAT4(1, 1, 0.25, 1), Vector3(0.5, 1.0, 0.5));
+		DiffuseCube* lUnderArm = new DiffuseCube(XMFLOAT4(1, 1, 0.25, 1), Vector3(0.5, 1.0, 0.5));
 		lUnderArm->_translation.y = -0.7f;
 		lUnderArm->SetParent(_slots[S_LEFT_ELBOW]);
 
 		_parts.push_back(lUnderArm);
 
-		Cube* rUnderArm = new Cube(XMFLOAT4(1, 1, 0.25, 1), Vector3(0.5, 1.0, 0.5));
+		DiffuseCube* rUnderArm = new DiffuseCube(XMFLOAT4(1, 1, 0.25, 1), Vector3(0.5, 1.0, 0.5));
 		rUnderArm->_translation.y -= 0.7f;
 		rUnderArm->SetParent(_slots[S_RIGHT_ELBOW]);
 
@@ -218,7 +218,7 @@ void Robot::Initialize()
 
 	//Stomach
 	{
-		Cube* stomach = new Cube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.5, 1.0, 0.5));
+		DiffuseCube* stomach = new DiffuseCube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.5, 1.0, 0.5));
 		stomach->_translation.y = -1.0f;
 		stomach->SetParent(_parts[P_BODY]);
 
@@ -227,7 +227,7 @@ void Robot::Initialize()
 
 	//Hip
 	{
-		Cube* hip = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(1.5, 0.7, 1.5));
+		DiffuseCube* hip = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(1.5, 0.7, 1.5));
 		hip->_translation.y = -1.0f;
 		hip->SetParent(_parts[P_STOMACH]);
 
@@ -241,7 +241,7 @@ void Robot::Initialize()
 		lSlot->SetParent(_parts[P_HIP]);
 		_slots.push_back(lSlot);
 
-		Cube* lHipJoint = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.7, 0.5, 0.5));
+		DiffuseCube* lHipJoint = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.7, 0.5, 0.5));
 		lHipJoint->_translation.x = -1.0f;
 		lHipJoint->SetParent(_parts[P_HIP]);
 
@@ -252,7 +252,7 @@ void Robot::Initialize()
 		rSlot->SetParent(_parts[P_HIP]);
 		_slots.push_back(rSlot);
 
-		Cube* rHipJoint = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.7, 0.5, 0.5));
+		DiffuseCube* rHipJoint = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.7, 0.5, 0.5));
 		rHipJoint->_translation.x = 1.0f;
 		rHipJoint->SetParent(_parts[P_HIP]);
 
@@ -261,7 +261,7 @@ void Robot::Initialize()
 
 	//UpperLeg
 	{
-		Cube* lUpperLeg = new Cube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 1.5, 0.4));
+		DiffuseCube* lUpperLeg = new DiffuseCube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 1.5, 0.4));
 	
 		lUpperLeg->_translation.y = -0.7f;
 	
@@ -269,7 +269,7 @@ void Robot::Initialize()
 
 		_parts.push_back(lUpperLeg);
 
-		Cube* rUpperLeg = new Cube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 1.5, 0.4));
+		DiffuseCube* rUpperLeg = new DiffuseCube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 1.5, 0.4));
 
 		rUpperLeg->_translation.y = -0.7f;
 
@@ -285,7 +285,7 @@ void Robot::Initialize()
 		lSlot->SetParent(_parts[P_LEFT_UPPER_LEG]);
 		_slots.push_back(lSlot);
 
-		Cube* lKnee = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.5, 0.5, 0.5));
+		DiffuseCube* lKnee = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.5, 0.5, 0.5));
 		lKnee->_translation.y = -1.0f;
 		lKnee->SetParent(_parts[P_LEFT_UPPER_LEG]);
 
@@ -296,7 +296,7 @@ void Robot::Initialize()
 		rSlot->SetParent(_parts[P_RIGHT_UPPER_LEG]);
 		_slots.push_back(rSlot);
 
-		Cube* rKnee = new Cube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.5, 0.5, 0.5));
+		DiffuseCube* rKnee = new DiffuseCube(XMFLOAT4(0.25, 0.25, 0.25, 1), Vector3(0.5, 0.5, 0.5));
 		rKnee->_translation.y = -1.0f;
 		rKnee->SetParent(_parts[P_RIGHT_UPPER_LEG]);
 
@@ -305,7 +305,7 @@ void Robot::Initialize()
 
 	//UnderLeg
 	{
-		Cube* lUnderLeg = new Cube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 1.5, 0.4));
+		DiffuseCube* lUnderLeg = new DiffuseCube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 1.5, 0.4));
 
 		lUnderLeg->_translation.y = -0.7f;
 
@@ -313,7 +313,7 @@ void Robot::Initialize()
 
 		_parts.push_back(lUnderLeg);
 
-		Cube* rUnderLeg = new Cube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 1.5, 0.4));
+		DiffuseCube* rUnderLeg = new DiffuseCube(XMFLOAT4(1, 1, 0.0, 1), Vector3(0.4, 1.5, 0.4));
 
 		rUnderLeg->_translation.y = -0.7f;
 

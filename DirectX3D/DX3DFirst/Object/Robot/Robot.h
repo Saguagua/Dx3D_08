@@ -61,7 +61,7 @@ private:
 	void Walk();
 
 	vector<Transform*> _slots;
-	vector<Cube*> _parts;
+	vector<DiffuseCube*> _parts;
 
 	float _speed = 5.0f;
 	float _direction1 = -1;
@@ -71,8 +71,8 @@ private:
 	float _upperMaxAngle = 1.0f;
 	float _underMaxAngle = -1.0f;
 
-	float _legSpeed = 1.0f;
-	float _underLegSpeed = 1.3f;
+	float _legSpeed = 5.0f;
+	float _underLegSpeed = 5.3f;
 	float _fistMaxAngle = 60.0f * 3.141592f / 180.0f;
 	float _armMaxAngle = 90.0f;
 	float _legMaxAngle = 90.0f * 3.141592f / 180.0f;

@@ -9,5 +9,5 @@ struct VertexOutput
 
 float4 main(VertexOutput input) : SV_TARGET
 {
-    return diffuseMap.Sample(samp, input.uv);
+    return diffuseMap.Sample(samp, input.uv) * input.diffuse;
 }

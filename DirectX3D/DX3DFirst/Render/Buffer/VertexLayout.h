@@ -35,12 +35,22 @@ struct VertexTexture
 	Vector2 _uv = {};
 };
 
-struct VertexTextureNoraml
+struct VertexTextureNormal
 {
-	VertexTextureNoraml() {}
-
+	VertexTextureNormal() {}
 
 	Vector3 _pos = {};
 	Vector2 _uv = {};
+	Vector3 _normal = {};
+};
+
+struct VertexColorNormal
+{
+	VertexColorNormal() {}
+	VertexColorNormal(XMFLOAT4 color, XMFLOAT3 pos)
+	: _color(color), _pos(pos){}
+
+	Vector3 _pos = {};
+	Vector4 _color = {};
 	Vector3 _normal = {};
 };
