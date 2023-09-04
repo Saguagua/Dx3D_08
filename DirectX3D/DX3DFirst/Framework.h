@@ -50,6 +50,8 @@ using namespace DirectX;
 #define KEY_DOWN(p)	 Keyboard::GetInstance()->Down(p)
 #define KEY_PRESS(p) Keyboard::GetInstance()->Press(p)
 
+#define CAMERA		
+
 typedef XMMATRIX Matrix;
 typedef XMFLOAT4 Vector4;
 typedef XMFLOAT2 Vector2;

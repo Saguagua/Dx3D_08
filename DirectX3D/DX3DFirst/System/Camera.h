@@ -10,6 +10,7 @@ public:
 	void Update();
 	void PostRender();
 
+	Transform* _transform;
 private:
 	void   FreeMode();
 	void TargetMode();
@@ -17,7 +18,6 @@ private:
 	void SetView();
 
 private:
-	Transform* _transform;
 
 	float _moveSpeed = 20.0f;
 	float _rotSpeed = 5.0f;

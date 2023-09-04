@@ -4,7 +4,7 @@ struct VertexOutput
 {
     float4 position : SV_POSITION;
     float4 color : COLOR;
-    float diffuse : DIFFUSE;
+    float3 normal : NORMAL;
 };
 
 VertexOutput main(VertexColorNormal input)
@@ -17,10 +17,7 @@ VertexOutput main(VertexColorNormal input)
     
     result.color = input.color;
     
-    float3 L = normalize(-lightDirection);
-    float3 N = normalize(mul(input.normal, (float3x3) world));
-    
-    result.diffuse = dot(N, L);
-    
+    result.normal = normalize(mul(input.normal, (float3x3) world));
+
     return result;
 }

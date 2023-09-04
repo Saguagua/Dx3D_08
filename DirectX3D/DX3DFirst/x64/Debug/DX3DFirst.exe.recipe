@@ -2,33 +2,33 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\DX3DFirst.exe</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\DX3DFirst.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles>
     <ContentFile>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\PixelColorDiffuse.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelColorDiffuse.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\PixelDiffuse.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelDiffuse.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\PixelTexture.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelTexture.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\VertexColorDiffuse.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexColorDiffuse.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\VertexDiffuse.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexDiffuse.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\VertexTexture.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexTexture.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\PixelTutorial.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelTutorial.cso</FullPath>
     </ContentFile>
     <ContentFile>
-      <FullPath>C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\VertexTutorial.cso</FullPath>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexTutorial.cso</FullPath>
     </ContentFile>
   </ContentFiles>
   <SatelliteDlls />

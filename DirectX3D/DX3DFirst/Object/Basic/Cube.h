@@ -1,6 +1,8 @@
 #pragma once
 class Cube :public Transform
 {
+	typedef VertexColorNormal VertexType;
+
 public:
 	Cube(Vector4 color, Vector3 size = Vector3(2,2,2));
 	~Cube();
@@ -9,6 +11,7 @@ public:
 	void Render();
 
 	void CreateMesh(Vector4 color);
+	void CreateNormal();
 
 private:
 	Material* _material;
@@ -17,7 +20,7 @@ private:
 
 	MatrixBuffer* _worldBuffer;
 
-	vector<VertexColor> _vertices;
+	vector<VertexType> _vertices;
 	vector<UINT> _indices;
 
 	static int _count;

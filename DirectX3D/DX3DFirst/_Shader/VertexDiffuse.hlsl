@@ -4,7 +4,7 @@ struct VertexOutput
 {
     float4 position : SV_POSITION;
     float2 uv : UV;
-    float diffuse : DIFFUSE;
+    float3 normal : NORMAL;
 };
 
 VertexOutput main(VertexTextureNormal input)
@@ -17,10 +17,7 @@ VertexOutput main(VertexTextureNormal input)
     
     result.uv = input.uv;
     
-    float3 L = normalize(-lightDirection);
-    float3 N = normalize(mul(input.normal, (float3x3)world));
-    
-    result.diffuse = dot(N, L);
+    result.normal = normalize(mul(input.normal, (float3x3)world));
     
     return result;
 }

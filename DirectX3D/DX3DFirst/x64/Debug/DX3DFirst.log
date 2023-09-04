@@ -1,2 +1,6 @@
-﻿  TextureScene.cpp
-  DX3DFirst.vcxproj -> C:\Users\SJH\Desktop\GitHub\Dx3D_08\DirectX3D\x64\Debug\DX3DFirst.exe
+﻿  Quad.cpp
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\Quad.cpp(49,31): warning C4267: '인수': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Buffer\VertexBuffer.h(26,47): warning C4267: '=': 'size_t'에서 'UINT'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Mesh.h(20,35): message : 컴파일되는 함수 템플릿 인스턴스화 'VertexBuffer::VertexBuffer<VertexTextureNormal>(std::vector<VertexTextureNormal,std::allocator<VertexTextureNormal>> &)'에 대한 참조를 확인하세요.
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\Basic\Quad.cpp(25,18): message : 컴파일되는 함수 템플릿 인스턴스화 'Mesh::Mesh<VertexTextureNormal>(std::vector<VertexTextureNormal,std::allocator<VertexTextureNormal>> &,std::vector<UINT,std::allocator<UINT>> &)'에 대한 참조를 확인하세요.
+  DX3DFirst.vcxproj -> C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\DX3DFirst.exe

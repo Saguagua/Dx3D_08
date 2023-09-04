@@ -39,6 +39,10 @@ struct VertexTextureNormal
 {
 	VertexTextureNormal() {}
 
+	VertexTextureNormal(Vector3 pos, Vector2 uv, Vector3 normal)
+		: _pos(pos), _uv(uv), _normal(normal) 
+	{}
+
 	Vector3 _pos = {};
 	Vector2 _uv = {};
 	Vector3 _normal = {};
@@ -49,6 +53,9 @@ struct VertexColorNormal
 	VertexColorNormal() {}
 	VertexColorNormal(XMFLOAT4 color, XMFLOAT3 pos)
 	: _color(color), _pos(pos){}
+
+	VertexColorNormal(XMFLOAT4 color, XMFLOAT3 pos, Vector3 normal)
+		: _color(color), _pos(pos), _normal(normal) {}
 
 	Vector3 _pos = {};
 	Vector4 _color = {};
