@@ -6,7 +6,7 @@ public:
 	~Terrian();
 
 	void Render();
-
+	Material* GetMaterial() { return _material; }
 private:
 	void CreateMesh();
 	void CreateNormal();

@@ -2,18 +2,21 @@
 #include "Sphere.h"
 
 Sphere::Sphere(float rad, UINT slice, UINT stack)
+    :_radius(rad), _sliceCount(slice), _stackCount(stack)
 {
-	_material = new Material();
-	_material->SetShader(L"ColorDiffuse");
-	CreateMesh(rad, slice, stack);
+	CreateMesh();
+    //slice는 세로 stack은 가로 갯수
 	_mesh = new Mesh(_vertices, _indices);
+
+	_material = new Material();
+	_material->SetShader(L"Specular");
 	_worldBuffer = new MatrixBuffer();
 }
 
 Sphere::~Sphere()
 {
-	delete _material;
 	delete _mesh;
+	delete _material;
 	delete _worldBuffer;
 }
 
@@ -34,107 +37,50 @@ void Sphere::Update()
 	_worldBuffer->UpdateSubresource();
 }
 
-void Sphere::CreateMesh(float rad, UINT sliceCount, UINT stackCount)
+void Sphere::CreateMesh()
 {
     _vertices.clear();
     _indices.clear();
 
-    float phiStep = XM_PI / stackCount;
-    float thetaStep = 2.0f * XM_PI / sliceCount;
+    float phiStep = XM_PI / _stackCount;
+    float thetaStep = XM_2PI / _sliceCount;
 
-    VertexColorNormal top;
-    top._pos = {0, rad, 0};
-    top._color = { 1,0,0,1 };
 
-    VertexColorNormal bottom;
-    bottom._pos = { 0, -rad, 0 };
-    bottom._color = { 1,0,0,1 };
-
-    _vertices.push_back(top);
-
-    for (UINT i = 1; i <= stackCount - 1; ++i)
+    for (UINT i = 0; i <= _stackCount; ++i)
     {
-        float phi = i * phiStep;
+        float phi = i * phiStep; //세로 
 
-        for (UINT j = 0; j <= sliceCount; ++j)
+        for (UINT j = 0; j < _sliceCount + 1; ++j)
         {
-            float theta = j * thetaStep;
+            float theta = j * thetaStep; //가로
 
-            VertexColorNormal v;
+            VertexType v;
 
-            v._pos.x = rad * sinf(phi) * cosf(theta);
-            v._pos.y = rad * cosf(phi);
-            v._pos.z = rad * sinf(phi) * sinf(theta);
+            v._pos.x = _radius * sinf(phi) * cosf(theta);
+            v._pos.y = _radius * cosf(phi);
+            v._pos.z = _radius * sinf(phi) * sinf(theta);
 
-            v._color = Vector4(1, 0, 0, 1);
+            v._normal = v._pos / _radius;
+
+            v._uv.x = j / (float)_sliceCount;
+            v._uv.y = i / (float)_sliceCount;
 
             _vertices.push_back(v);
         }
     }
-
-    _vertices.push_back(bottom);
-
-
-    for (UINT i = 1; i <= sliceCount; ++i)
+   
+    for (UINT j = 0; j < _stackCount; j++)
     {
-        _indices.push_back(0);
-        _indices.push_back(i + 1);
-        _indices.push_back(i);
-    }
-
-    UINT baseIndex = 1;
-    UINT ringVertexCount = sliceCount + 1;
-
-    for (UINT i = 0; i < stackCount - 2; ++i)
-    {
-        for (UINT j = 0; j < sliceCount; ++j)
+        for (UINT i = 0; i < _sliceCount; i++)
         {
-            _indices.push_back(baseIndex + i * ringVertexCount + j);
-            _indices.push_back(baseIndex + i * ringVertexCount + j + 1);
-            _indices.push_back(baseIndex + (i + 1) * ringVertexCount + j);
-            
-            _indices.push_back(baseIndex + (i + 1) * ringVertexCount + j);
-            _indices.push_back(baseIndex + i * ringVertexCount + j + 1);
-            _indices.push_back(baseIndex + (i + 1) * ringVertexCount + j + 1);
+            _indices.push_back(i + 0 + (_sliceCount + 1) * (j + 0));
+            _indices.push_back(i + 1 + (_sliceCount + 1) * (j + 0));
+            _indices.push_back(i + 0 + (_sliceCount + 1) * (j + 1));
+
+            _indices.push_back(i + 0 + (_sliceCount + 1) * (j + 1));
+            _indices.push_back(i + 1 + (_sliceCount + 1) * (j + 0));
+            _indices.push_back(i + 1 + (_sliceCount + 1) * (j + 1));
         }
-    }
-
-    //
-    // Compute indices for bottom stack.  The bottom stack was written last to the vertex buffer
-    // and connects the bottom pole to the bottom ring.
-    //
-
-    // South pole vertex was added last.
-    UINT southPoleIndex = (UINT)_vertices.size() - 1;
-
-    // Offset the indices to the index of the first vertex in the last ring.
-    baseIndex = southPoleIndex - ringVertexCount;
-
-    for (UINT i = 0; i < sliceCount; ++i)
-    {
-        _indices.push_back(southPoleIndex);
-        _indices.push_back(baseIndex + i);
-        _indices.push_back(baseIndex + i + 1);
-    }
-
-    for (UINT i = 0; i < _indices.size() / 3; i++)
-    {
-        UINT index0 = _indices[i * 3 + 0];
-        UINT index1 = _indices[i * 3 + 1];
-        UINT index2 = _indices[i * 3 + 2];
-
-        Vector3 p0 = _vertices[index0]._pos;
-        Vector3 p1 = _vertices[index1]._pos;
-        Vector3 p2 = _vertices[index2]._pos;
-
-        Vector3 v01 = p1 - p0;
-        Vector3 v02 = p2 - p0;
-
-        Vector3 normal = Vector3::Cross(v01, v02).GetNormalized();
-
-        _vertices[index0]._normal += normal;
-        _vertices[index1]._normal += normal;
-        _vertices[index2]._normal += normal;
     }
 
 }

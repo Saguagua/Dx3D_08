@@ -4,8 +4,9 @@
 Terrian::Terrian(wstring diffusePath, wstring heightPath)
 {
 	_material = new Material();
-	_material->SetShader(L"Diffuse");
-	_material->SetDiffuseMap(diffusePath);
+	_material->SetShader(L"Specular");
+	_material->SetDiffuseMap(L"Landscape/Fieldstone_DM.tga");
+	_material->SetSpecularMap(L"Landscape/Fieldstone_SM.tga");
 
 	_worldBuffer = new MatrixBuffer();
 

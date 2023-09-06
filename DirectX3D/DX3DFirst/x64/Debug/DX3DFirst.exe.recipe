@@ -13,6 +13,9 @@
       <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelDiffuse.cso</FullPath>
     </ContentFile>
     <ContentFile>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelSpecular.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
       <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelTexture.cso</FullPath>
     </ContentFile>
     <ContentFile>
@@ -20,6 +23,9 @@
     </ContentFile>
     <ContentFile>
       <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexDiffuse.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexSpecular.cso</FullPath>
     </ContentFile>
     <ContentFile>
       <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexTexture.cso</FullPath>

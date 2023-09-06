@@ -5,7 +5,7 @@ MainGame::MainGame()
 {
 	Initialize();
 
-	_scene = new TextureScene();
+	_scene = new TerrianScene();
 }
 
 MainGame::~MainGame()
@@ -38,7 +38,7 @@ void MainGame::Render()
 
 	_scene->PostRender();
 	Camera::GetInstance()->PostRender();
-
+	Environment::GetInstance()->PostRender();
 	ImGui::Render();
 
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());

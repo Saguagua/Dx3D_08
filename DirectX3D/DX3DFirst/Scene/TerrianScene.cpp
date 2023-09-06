@@ -13,8 +13,6 @@ TerrianScene::~TerrianScene()
 
 void TerrianScene::CreateMesh()
 {
-	
-	
 }
 
 void TerrianScene::Update()
@@ -33,4 +31,5 @@ void TerrianScene::Render()
 
 void TerrianScene::PostRender()
 {
+	_terrian->GetMaterial()->PostRender();
 }

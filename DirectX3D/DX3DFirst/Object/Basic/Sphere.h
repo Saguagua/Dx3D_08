@@ -1,6 +1,7 @@
 #pragma once
 class Sphere :public Transform
 {
+	typedef VertexTextureNormal VertexType;
 public:
 	Sphere(float Rad, UINT sliceCount, UINT stackCount);
 	~Sphere();
@@ -8,14 +9,22 @@ public:
 	void Render();
 	void Update();
 
+	Material* GetMaterial() { return _material; }
+
 private:
-	void CreateMesh(float topRad, UINT sliceCount, UINT stackCount);
-	void CreateGeosphere(float radius, UINT numSubdivisions);
+
+private:
+	void CreateMesh();
+
 	Mesh* _mesh;
 	Material* _material;
 	MatrixBuffer* _worldBuffer;
 
-	vector<VertexColorNormal> _vertices;
+	vector<VertexType> _vertices;
 	vector<UINT> _indices;
+
+	float _radius;
+	UINT _sliceCount;
+	UINT _stackCount;
 };
 

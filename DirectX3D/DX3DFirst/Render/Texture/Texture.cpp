@@ -20,9 +20,17 @@ Texture* Texture::Get(wstring file)
 	if (_textures.count(file) > 0)
 		return _textures[file];
 
+	wstring extension = GetExtension(file);
 
 	ScratchImage image;
-	LoadFromWICFile(file.c_str(), WIC_FLAGS_NONE, nullptr, image);
+
+	if (extension == L"tga")
+		LoadFromTGAFile(file.c_str(), nullptr, image);
+	else if (extension == L"dds")
+		LoadFromDDSFile(file.c_str(), DDS_FLAGS_NONE, nullptr, image);
+	else
+		LoadFromWICFile(file.c_str(), WIC_FLAGS_NONE, nullptr, image);
+
 
 	ID3D11ShaderResourceView* srv = nullptr;
 

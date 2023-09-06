@@ -14,6 +14,11 @@ public:
 	void SetMaterial();
 
 	void SetDiffuseMap(wstring file);
+	void SetSpecularMap(wstring file);
+
+	MaterialBuffer* GetMBuffer() { return _mBuffer; }
+
+	void PostRender();
 
 private:
 
@@ -22,5 +27,8 @@ private:
 	PixelShader* _pixelShader;
 
 	Texture* _diffuseMap = nullptr; //diffuse -> 난반사 깊이감
+	Texture* _specularMap = nullptr;
+
+	MaterialBuffer* _mBuffer;
 };
 

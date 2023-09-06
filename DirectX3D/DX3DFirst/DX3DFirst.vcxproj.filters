@@ -162,6 +162,9 @@
     <ClInclude Include="Object\Basic\Sphere.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Utility\Utility.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -269,6 +272,9 @@
     <ClCompile Include="Object\Basic\Sphere.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Utility\Utility.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="__Others\DX3DFirst.rc">
@@ -365,6 +371,8 @@
     <FxCompile Include="_Shader\PixelDiffuse.hlsl" />
     <FxCompile Include="_Shader\VertexColorDiffuse.hlsl" />
     <FxCompile Include="_Shader\PixelColorDiffuse.hlsl" />
+    <FxCompile Include="_Shader\VertexSpecular.hlsl" />
+    <FxCompile Include="_Shader\PixelSpecular.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="_Library\DirectXTex.lib" />

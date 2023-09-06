@@ -50,7 +50,7 @@ using namespace DirectX;
 #define KEY_DOWN(p)	 Keyboard::GetInstance()->Down(p)
 #define KEY_PRESS(p) Keyboard::GetInstance()->Press(p)
 
-#define CAMERA		
+#define RS StateManager::GetInstance()->GetRS()
 
 typedef XMMATRIX Matrix;
 typedef XMFLOAT4 Vector4;
@@ -60,7 +60,10 @@ typedef XMFLOAT2 Vector2;
 #include "Utility/Vector3.h"
 #include "Utility\Keyboard.h"
 #include "Utility\Time.h"
+#include "Utility\Utility.h"
 #include "Object/Transform.h"
+
+using namespace Utility;
 
 #include "System/Device.h"
 
@@ -68,16 +71,16 @@ typedef XMFLOAT2 Vector2;
 #include "Render/Shader/VertexShader.h"
 #include "Render/Shader/PixelShader.h"
 
-#include "Render\Texture\Texture.h"
-#include "Render/Material.h"
-
 #include "Render/Buffer/VertexLayout.h"
 #include "Render/Buffer/VertexBuffer.h"
 #include "Render/Buffer/IndexBuffer.h"
 #include "Render/Buffer/ConstBuffer.h"
 #include "Render/Buffer/GlobalBuffer.h"
 
+#include "Render\Texture\Texture.h"
 #include "Render/Mesh.h"
+#include "Render/Material.h"
+
 #include "Render\State\SamplerState.h"
 #include "Render\State\RasterizerState.h"
 #include "Render\State\StateManager.h"

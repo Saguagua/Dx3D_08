@@ -19,3 +19,13 @@ void RasterizerState::SetState()
 	DC->RSSetState(_rasterizerState);
 }
 
+void RasterizerState::ChangeState(D3D11_FILL_MODE mode)
+{
+	if (_rasterizerState != nullptr)
+		_rasterizerState->Release();
+
+	_desc.FillMode = mode;
+
+	DEVICE->CreateRasterizerState(&_desc, &_rasterizerState);
+	DC->RSSetState(_rasterizerState);
+}

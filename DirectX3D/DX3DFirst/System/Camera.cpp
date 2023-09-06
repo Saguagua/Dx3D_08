@@ -3,7 +3,7 @@
 
 Camera::Camera()
 {
-	_viewBuffer = new MatrixBuffer();
+	_viewBuffer = new ViewBuffer();
 	_transform = new Transform();
 
 	_transform->_translation = { 0.0f, 10.0f, -10.0f };
@@ -83,6 +83,6 @@ void Camera::SetView()
 	_viewMatrix = XMMatrixLookAtLH(eyePos, focusPos, upVector);
 	//원근감과 카메라 회전을 위해 사용
 
-	_viewBuffer->SetData(_viewMatrix);
+	_viewBuffer->SetData(_viewMatrix, _transform->GetWorld());
 	_viewBuffer->SetVSBuffer(1);
 }
