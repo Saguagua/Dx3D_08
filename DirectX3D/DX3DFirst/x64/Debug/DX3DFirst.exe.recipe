@@ -13,6 +13,9 @@
       <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelDiffuse.cso</FullPath>
     </ContentFile>
     <ContentFile>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelNormalMapping.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
       <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\PixelSpecular.cso</FullPath>
     </ContentFile>
     <ContentFile>
@@ -23,6 +26,9 @@
     </ContentFile>
     <ContentFile>
       <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexDiffuse.cso</FullPath>
+    </ContentFile>
+    <ContentFile>
+      <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexNormalMapping.cso</FullPath>
     </ContentFile>
     <ContentFile>
       <FullPath>C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\x64\Debug\VertexSpecular.cso</FullPath>

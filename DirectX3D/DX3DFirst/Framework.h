@@ -17,6 +17,7 @@
 #include <unordered_map>
 #include <string>
 #include <functional>
+#include <DirectXCollision.h>
 
 #pragma comment(lib, "d3d11.lib")
 #pragma comment(lib, "d3dcompiler.lib")
@@ -97,6 +98,7 @@ using namespace Utility;
 #include "Object/Basic/Sphere.h"
 
 #include "Object\LandScape\Terrian.h"
+#include "Object\LandScape\TerrainEditor.h"
 
 #include "Object/Robot/Robot.h"
 
@@ -104,6 +106,7 @@ using namespace Utility;
 #include "Scene/TutorialScene.h"
 #include "Scene\TextureScene.h"
 #include "Scene\TerrianScene.h"
+#include "Scene\TerrainEditorScene.h"
 #include "MainGame.h"
 
 

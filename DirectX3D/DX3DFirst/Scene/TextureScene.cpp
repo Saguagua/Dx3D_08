@@ -13,6 +13,7 @@ TextureScene::TextureScene()
 
 	_sphere->GetMaterial()->SetDiffuseMap(L"Landscape/Fieldstone_DM.tga");
 	_sphere->GetMaterial()->SetSpecularMap(L"Landscape/Fieldstone_SM.tga");
+	_sphere->GetMaterial()->SetNormalMap(L"LandScape/fieldstone_NM.tga");
 	//_cube = new Cube({ 1, 0, 0, 1 }, {1,1,1});
 	//_cube->_translation.x = 10.0f;
 	//_tCube = new TextureCube();

@@ -1,7 +1,7 @@
 #pragma once
 class Sphere :public Transform
 {
-	typedef VertexTextureNormal VertexType;
+	typedef VertexTextureNormalTangent VertexType;
 public:
 	Sphere(float Rad, UINT sliceCount, UINT stackCount);
 	~Sphere();
@@ -12,9 +12,10 @@ public:
 	Material* GetMaterial() { return _material; }
 
 private:
+	void CreateMesh();
+	void Tangent();
 
 private:
-	void CreateMesh();
 
 	Mesh* _mesh;
 	Material* _material;

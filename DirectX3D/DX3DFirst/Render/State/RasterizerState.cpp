@@ -4,7 +4,7 @@
 RasterizerState::RasterizerState()
 {
 	_desc.CullMode = D3D11_CULL_BACK;
-	_desc.FillMode = D3D11_FILL_SOLID;
+	_desc.FillMode = D3D11_FILL_WIREFRAME;
 
 	DEVICE->CreateRasterizerState(&_desc, &_rasterizerState);
 }

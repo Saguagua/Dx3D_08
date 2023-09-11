@@ -15,10 +15,15 @@ public:
 
 	void PostRender();
 
+	Matrix GetProjectionMatrix() { return _projectionMatrix; }
+
 private:
+	Matrix _projectionMatrix;
 	MatrixBuffer* _projBuffer;
+
 	LightBuffer* _lightBuffer;
 
 	Vector3 lightDirection = V_DOWN;
+
 };
 

@@ -53,6 +53,14 @@ struct VertexTextureNormal
     float3 normal : NORMAL;
 };
 
+struct VertexTextureNormalTangent
+{
+    float4 pos : POSITION;
+    float2 uv : UV;
+    float3 normal : NORMAL;
+    float3 tangent : TANGENT;
+};
+
 struct VertexColorNormal
 {
     float4 pos : POSITION;
@@ -62,5 +70,6 @@ struct VertexColorNormal
 
 Texture2D diffuseMap : register(t0);
 Texture2D specularMap : register(t1);
+Texture2D normalMap : register(t2);
 
 SamplerState samp : register(s0);

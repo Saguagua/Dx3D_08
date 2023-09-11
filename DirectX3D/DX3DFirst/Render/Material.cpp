@@ -45,6 +45,9 @@ void Material::SetMaterial()
     if (_specularMap)
         _specularMap->PSSetShaderResoureces(1);
 
+    if (_normalMap)
+        _normalMap->PSSetShaderResoureces(2);
+
     _mBuffer->SetPSBuffer(1);
 }
 
@@ -60,6 +63,13 @@ void Material::SetSpecularMap(wstring file)
     _specularMap = Texture::Get(file);
 
     _mBuffer->_data.hasSpecularMap = true;
+}
+
+void Material::SetNormalMap(wstring file)
+{
+    _normalMap = Texture::Get(file);
+
+    _mBuffer->_data.hasNormalMap = true;
 }
 
 void Material::PostRender()

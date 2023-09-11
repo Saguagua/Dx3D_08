@@ -4,9 +4,10 @@
 Terrian::Terrian(wstring diffusePath, wstring heightPath)
 {
 	_material = new Material();
-	_material->SetShader(L"Specular");
+	_material->SetShader(L"NormalMapping");
 	_material->SetDiffuseMap(L"Landscape/Fieldstone_DM.tga");
 	_material->SetSpecularMap(L"Landscape/Fieldstone_SM.tga");
+	_material->SetNormalMap(L"Landscape/WaveNormal.png");
 
 	_worldBuffer = new MatrixBuffer();
 
@@ -27,6 +28,7 @@ Terrian::~Terrian()
 
 void Terrian::Render()
 {
+	_worldBuffer->SetData(_world);
 	_worldBuffer->SetVSBuffer(0);
 
 	_mesh->SetMesh();

@@ -15,6 +15,7 @@ public:
 
 	void SetDiffuseMap(wstring file);
 	void SetSpecularMap(wstring file);
+	void SetNormalMap(wstring file);
 
 	MaterialBuffer* GetMBuffer() { return _mBuffer; }
 
@@ -28,6 +29,7 @@ private:
 
 	Texture* _diffuseMap = nullptr; //diffuse -> 난반사 깊이감
 	Texture* _specularMap = nullptr;
+	Texture* _normalMap = nullptr;
 
 	MaterialBuffer* _mBuffer;
 };

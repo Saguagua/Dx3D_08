@@ -5,7 +5,7 @@ MainGame::MainGame()
 {
 	Initialize();
 
-	_scene = new TerrianScene();
+	_scene = new TerrainEditorScene();
 }
 
 MainGame::~MainGame()

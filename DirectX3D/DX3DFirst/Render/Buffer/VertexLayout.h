@@ -61,3 +61,17 @@ struct VertexColorNormal
 	Vector4 _color = {};
 	Vector3 _normal = {};
 };
+
+
+struct VertexTextureNormalTangent
+{
+	VertexTextureNormalTangent() {}
+
+	VertexTextureNormalTangent(Vector3 pos, Vector2 uv, Vector3 normal, Vector3 tangent)
+		: _pos(pos), _uv(uv), _normal(normal), _tangent(tangent) {}
+
+	Vector3 _pos = {};
+	Vector2 _uv = {};
+	Vector3 _normal = {};
+	Vector3 _tangent = {};
+};

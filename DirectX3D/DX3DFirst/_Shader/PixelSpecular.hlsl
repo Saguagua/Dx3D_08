@@ -20,9 +20,6 @@ float4 main(VertexOutput input) : SV_TARGET
     if (hasDiffuseMap)
         albedo = diffuseMap.Sample(samp, input.uv);
     
-    float4 diffuse = albedo * diffuseIntensity;
-    
-    
     float specularIntensity = 0;
     
     float3 reflection = normalize(reflect(L, input.normal));
@@ -30,15 +27,15 @@ float4 main(VertexOutput input) : SV_TARGET
     if (hasSpecularMap)
         specularIntensity = saturate(dot(-reflection, input.viewDir));
     
-    float4 specularMapIntensity = float4(1, 1, 1, 1);
+    float4 specularSample = float4(1, 1, 1, 1);
     
-    specularMapIntensity = specularMap.Sample(samp, input.uv);
+    specularSample = specularMap.Sample(samp, input.uv);
     
-    specularIntensity = pow(specularIntensity, shininess) * specularMapIntensity;
+    float4 diffuse = albedo * diffuseIntensity * mDiffuse;
     
-    float4 specular = albedo * specularIntensity;
+    float4 specular = pow(specularIntensity, shininess) * specularSample * mSpecular;
     
-    float4 ambient = albedo * ambientLight;
+    float4 ambient = albedo * ambientLight * mAmbient;
     
     return diffuse + specular + ambient; //pphong shading
 }

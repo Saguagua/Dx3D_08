@@ -33,14 +33,15 @@ void Environment::CreatePerspective()
 {
     _projBuffer = new MatrixBuffer();
 
-    XMMATRIX proj = XMMatrixPerspectiveFovLH(
+    _projectionMatrix = XMMatrixPerspectiveFovLH(
         XM_PIDIV4,
         WIN_WIDTH / WIN_HEIGHT,
         0.1f,
         1000.0f
     ); //Fov -> field of view (½Ã¾ß°¢)
 
-    _projBuffer->SetData(proj);
+    _projBuffer->SetData(_projectionMatrix);
+
     _projBuffer->SetVSBuffer(2);
 }
 

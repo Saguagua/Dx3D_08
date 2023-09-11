@@ -64,6 +64,14 @@ struct Vector3
 	void operator*=(const float& value) { *this = *this * value; }
 	void operator/=(const float& value) { *this = *this / value; }
 
+	Vector3 operator*(const Matrix& value)
+	{
+		
+
+		return XMVector3TransformNormal(*this, value);
+
+	}
+
 	float x = 0.0f;
 	float y = 0.0f;
 	float z = 0.0f;
