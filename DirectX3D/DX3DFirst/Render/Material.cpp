@@ -1,9 +1,19 @@
 #include "framework.h"
 #include "Material.h"
 
+string Material::_ID = "";
+
 Material::Material()
 {
     _mBuffer = new MaterialBuffer();
+
+    char path[128];
+    GetCurrentDirectoryA(128, path);
+
+    _projDir = path ;
+    _projDir += "_Texture/";
+
+    _ID += ".";
 }
 
 Material::Material(wstring path)
@@ -11,6 +21,14 @@ Material::Material(wstring path)
     SetShader(path);
 
     _mBuffer = new MaterialBuffer();
+
+    char curPath[128];
+    GetCurrentDirectoryA(128, curPath);
+
+    _projDir = curPath;
+    _projDir += "_Texture/";
+
+    _ID += ".";
 }
 
 Material::~Material()
@@ -83,4 +101,46 @@ void Material::PostRender()
     ImGui::Checkbox("HasNormalMap", (bool*)&_mBuffer->_data.hasNormalMap);
 
     ImGui::SliderFloat("Shininess", &_mBuffer->_data.shininess, 1.0f, 50.0f);
+}
+
+void Material::SelectMap()
+{
+#define DIALOG  ImGuiFileDialog::Instance()
+
+    if (ImGui::BeginChild(_ID.c_str(), ImVec2(100, 85), true))
+    {
+        if (ImGui::Button("DiffuseMap"))
+            DIALOG->OpenDialog("Diffuse", "Select Diffuse", ".png,.jpg,.dds,.tga", "_Texture");
+
+        if (ImGui::Button("SpecularMap"))
+            DIALOG->OpenDialog("Specular", "Select Specular", ".png,.jpg,.dds,.tga", "_Texture");
+
+        if (ImGui::Button("NormalMap"))
+            DIALOG->OpenDialog("Normal", "Select Normal", ".png,.jpg,.dds,.tga", "_Texture");
+
+        if (DIALOG->Display("Diffuse") || DIALOG->Display("Specular") || DIALOG->Display("Normal"))
+        {
+            if (DIALOG->IsOk())
+            {
+                string path = DIALOG->GetFilePathName();
+
+                path = path.substr(_projDir.size() + 1, path.size());
+
+                if (DIALOG->GetOpenedKey() == "Diffuse")
+                    SetDiffuseMap(ToWString(path));
+
+                else if (DIALOG->GetOpenedKey() == "Specular")
+                    SetSpecularMap(ToWString(path));
+
+                else if (DIALOG->GetOpenedKey() == "Normal")
+                    SetNormalMap(ToWString(path));
+
+            }
+
+            DIALOG->Close();
+        }
+
+
+        ImGui::EndChild();
+    }
 }

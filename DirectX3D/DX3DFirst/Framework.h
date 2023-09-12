@@ -32,6 +32,8 @@
 
 #pragma comment(lib, "ImGui.lib")
 
+#include "ImGuiFileDialog.h"
+
 using namespace std;
 using namespace DirectX;
 
@@ -97,7 +99,7 @@ using namespace Utility;
 #include "Object/Basic/Cylinder.h"
 #include "Object/Basic/Sphere.h"
 
-#include "Object\LandScape\Terrian.h"
+#include "Object\LandScape\Terrain.h"
 #include "Object\LandScape\TerrainEditor.h"
 
 #include "Object/Robot/Robot.h"
@@ -105,7 +107,7 @@ using namespace Utility;
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"
 #include "Scene\TextureScene.h"
-#include "Scene\TerrianScene.h"
+#include "Scene\TerrainScene.h"
 #include "Scene\TerrainEditorScene.h"
 #include "MainGame.h"
 

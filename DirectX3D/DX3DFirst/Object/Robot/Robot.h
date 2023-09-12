@@ -54,19 +54,21 @@ public:
 	void Update();
 	void Render();
 
+	void Walk();
+	void Idle();
+
+	Transform* GetBody() { return _parts[P_BODY]; }
+
 private:
 	void Initialize();
 	void KeyInput();
 
-	void Walk();
 
 	vector<Transform*> _slots;
 	vector<DiffuseCube*> _parts;
 
 	float _speed = 5.0f;
 	float _direction1 = -1;
-	float _direction2 = -1;
-	float _direction3 = -1;
 
 	float _upperMaxAngle = 1.0f;
 	float _underMaxAngle = -1.0f;

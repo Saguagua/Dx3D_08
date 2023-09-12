@@ -163,8 +163,8 @@
     <ClInclude Include="Scene\TextureScene.h" />
     <ClInclude Include="Render\Texture\Texture.h" />
     <ClInclude Include="Object\Basic\TextureCube.h" />
-    <ClInclude Include="Scene\TerrianScene.h" />
-    <ClInclude Include="Object\LandScape\Terrian.h" />
+    <ClInclude Include="Scene\TerrainScene.h" />
+    <ClInclude Include="Object\LandScape\Terrain.h" />
     <ClInclude Include="Scene\TerrainEditorScene.h" />
     <ClInclude Include="Object\LandScape\TerrainEditor.h" />
     <ClInclude Include="Utility\Keyboard.h" />
@@ -178,6 +178,8 @@
     <ClInclude Include="_Include\DirectXTex.h" />
     <ClInclude Include="_Include\imconfig.h" />
     <ClInclude Include="_Include\imgui.h" />
+    <ClInclude Include="_Include\ImGuiFileDialog.h" />
+    <ClInclude Include="_Include\ImGuiFileDialogConfig.h" />
     <ClInclude Include="_Include\imgui_impl_dx11.h" />
     <ClInclude Include="_Include\imgui_impl_win32.h" />
     <ClInclude Include="_Include\imgui_internal.h" />
@@ -220,14 +222,17 @@
     <ClCompile Include="Scene\TextureScene.cpp" />
     <ClCompile Include="Render\Texture\Texture.cpp" />
     <ClCompile Include="Object\Basic\TextureCube.cpp" />
-    <ClCompile Include="Scene\TerrianScene.cpp" />
-    <ClCompile Include="Object\LandScape\Terrian.cpp" />
+    <ClCompile Include="Scene\TerrainScene.cpp" />
+    <ClCompile Include="Object\LandScape\Terrain.cpp" />
     <ClCompile Include="Scene\TerrainEditorScene.cpp" />
     <ClCompile Include="Object\LandScape\TerrainEditor.cpp" />
     <ClCompile Include="Utility\Keyboard.cpp" />
     <ClCompile Include="Utility\Time.cpp" />
     <ClCompile Include="Utility\Utility.cpp" />
     <ClCompile Include="Utility\Vector3.cpp" />
+    <ClCompile Include="_Include\ImGuiFileDialog.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">NotUsing</PrecompiledHeader>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="__Others\DX3DFirst.rc" />

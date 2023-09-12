@@ -30,7 +30,7 @@ void Robot::Update()
 	for (auto slot : _slots)
 		slot->Update();
 	
-	KeyInput();
+	//KeyInput();
 }
 
 void Robot::Render()
@@ -413,4 +413,21 @@ void Robot::Walk()
 	if (_slots[S_LEFT_HIPJOINT]->_rotation.x >= _fistMaxAngle 
 		|| _slots[S_RIGHT_HIPJOINT]->_rotation.x >= _fistMaxAngle)
 		_direction1 *= -1;
+}
+
+void Robot::Idle()
+{
+	_slots[S_LEFT_SHOULDER]->_rotation.x = 0;
+	_slots[S_RIGHT_SHOULDER]->_rotation.x = 0;
+
+	_slots[S_LEFT_HIPJOINT]->_rotation.x = 0;
+	_slots[S_RIGHT_HIPJOINT]->_rotation.x = 0;
+
+	_slots[S_LEFT_KNEE]->_rotation.x = 0;
+	_slots[S_LEFT_ELBOW]->_rotation.x = 0;
+
+	_slots[S_RIGHT_ELBOW]->_rotation.x = 0;
+	_slots[S_RIGHT_KNEE]->_rotation.x = 0;
+
+	_direction1 = -1;
 }

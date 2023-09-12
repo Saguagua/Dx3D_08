@@ -21,6 +21,8 @@ public:
 
 	void PostRender();
 
+	void SelectMap();
+
 private:
 
 	//Shader -> Material
@@ -32,5 +34,9 @@ private:
 	Texture* _normalMap = nullptr;
 
 	MaterialBuffer* _mBuffer;
+
+	string _projDir;
+
+	static string _ID;
 };
 

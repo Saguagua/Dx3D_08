@@ -141,7 +141,7 @@
     <ClInclude Include="Object\Basic\TextureCube.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scene\TerrianScene.h">
+    <ClInclude Include="Scene\TerrainScene.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Render\State\RasterizerState.h">
@@ -150,7 +150,7 @@
     <ClInclude Include="System\Camera.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Object\LandScape\Terrian.h">
+    <ClInclude Include="Object\LandScape\Terrain.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\Basic\DiffuseCube.h">
@@ -169,6 +169,12 @@
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="Object\LandScape\TerrainEditor.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="_Include\ImGuiFileDialog.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="_Include\ImGuiFileDialogConfig.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
@@ -257,7 +263,7 @@
     <ClCompile Include="Object\Basic\TextureCube.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scene\TerrianScene.cpp">
+    <ClCompile Include="Scene\TerrainScene.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Render\State\RasterizerState.cpp">
@@ -266,7 +272,7 @@
     <ClCompile Include="System\Camera.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Object\LandScape\Terrian.cpp">
+    <ClCompile Include="Object\LandScape\Terrain.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\Basic\DiffuseCube.cpp">
@@ -285,6 +291,9 @@
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Object\LandScape\TerrainEditor.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="_Include\ImGuiFileDialog.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
