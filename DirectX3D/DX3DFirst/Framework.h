@@ -43,6 +43,10 @@ using namespace DirectX;
 
 #pragma comment(lib, "DirectXTex.lib")
 
+#include <Shlwapi.h>
+
+#pragma comment(lib, "shlwapi.lib")
+
 #define WIN_WIDTH 1280.0f
 #define	WIN_HEIGHT 720.0f
 
@@ -52,6 +56,8 @@ using namespace DirectX;
 #define KEY_UP(p)	 Keyboard::GetInstance()->Up(p)
 #define KEY_DOWN(p)	 Keyboard::GetInstance()->Down(p)
 #define KEY_PRESS(p) Keyboard::GetInstance()->Press(p)
+
+#define DIALOG  ImGuiFileDialog::Instance()
 
 #define RS StateManager::GetInstance()->GetRS()
 
@@ -64,6 +70,8 @@ typedef XMFLOAT2 Vector2;
 #include "Utility\Keyboard.h"
 #include "Utility\Time.h"
 #include "Utility\Utility.h"
+#include "Utility\BinaryWriter.h"
+#include "Utility\BinaryReader.h"
 #include "Object/Transform.h"
 
 using namespace Utility;
@@ -73,11 +81,14 @@ using namespace Utility;
 #include "Render/Shader/Shader.h"
 #include "Render/Shader/VertexShader.h"
 #include "Render/Shader/PixelShader.h"
+#include "Render\Shader\ComputeShader.h"
 
 #include "Render/Buffer/VertexLayout.h"
 #include "Render/Buffer/VertexBuffer.h"
 #include "Render/Buffer/IndexBuffer.h"
 #include "Render/Buffer/ConstBuffer.h"
+#include "Render\Buffer\RawBuffer.h"
+#include "Render\Buffer\StructuredBuffer.h"
 #include "Render/Buffer/GlobalBuffer.h"
 
 #include "Render\Texture\Texture.h"

@@ -26,6 +26,9 @@ private:
 
 	void SetView();
 
+	void Save();
+	void Load();
+
 private:
 
 	float _moveSpeed = 20.0f;

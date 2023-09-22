@@ -5,12 +5,14 @@ MainGame::MainGame()
 {
 	Initialize();
 
-	_scene = new TerrainScene();
+	_scene = new TerrainEditorScene();
 }
 
 MainGame::~MainGame()
 {
+	delete _scene;
 	Release();
+
 }
 
 void MainGame::Update()
@@ -28,6 +30,11 @@ void MainGame::Render()
 	ImGui_ImplWin32_NewFrame();
 	ImGui::NewFrame();
 
+	if (_isWireFrame)
+		RS->ChangeState(D3D11_FILL_WIREFRAME);
+	else
+		RS->ChangeState(D3D11_FILL_SOLID);
+
 	_scene->PreRender();
 
 	Device::GetInstance()->Clear();
@@ -39,6 +46,9 @@ void MainGame::Render()
 	_scene->PostRender();
 	Camera::GetInstance()->PostRender();
 	Environment::GetInstance()->PostRender();
+
+	ImGui::Checkbox("WireFrame", &_isWireFrame);
+
 	ImGui::Render();
 
 	ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());

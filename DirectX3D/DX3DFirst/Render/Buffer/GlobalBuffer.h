@@ -85,3 +85,47 @@ private:
 		XMMATRIX invView;
 	} _data;
 };
+
+
+class RayBuffer : public ConstBuffer
+{
+public:
+	RayBuffer()
+		:ConstBuffer(&_data, sizeof(_data))
+	{
+	}
+
+	void SetData(XMMATRIX value, XMMATRIX invView)
+	{
+	}
+
+	struct Data
+	{
+		Vector3     origin = {};
+		  float outputSize = 0;
+		Vector3  direction = {};
+		  float    paading = 0;
+	} _data;
+};
+
+class BrushBuffer : public ConstBuffer
+{
+public:
+	BrushBuffer()
+		:ConstBuffer(&_data, sizeof(_data))
+	{
+	}
+
+	void SetData(XMMATRIX value, XMMATRIX invView)
+	{
+	}
+
+	struct Data
+	{
+		int type = 0;
+		Vector3 location = {};
+
+		float range = 10;
+		Vector3 color = {0.0f,0.5f,0.0f};
+	} _data;
+};

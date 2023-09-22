@@ -15,7 +15,11 @@ Texture::~Texture()
 
 Texture* Texture::Get(wstring file)
 {
+	wstring path = file;
+
 	file = L"_Texture/" + file;
+	
+	assert(PathFileExists(file.c_str()));
 
 	if (_textures.count(file) > 0)
 		return _textures[file];
@@ -43,6 +47,49 @@ Texture* Texture::Get(wstring file)
 	);
 
 	_textures[file] = new Texture(srv, image);
+	_textures[file]->_path = path;
+
+	return _textures[file];
+}
+
+Texture* Texture::Load(wstring file)
+{
+	wstring path = file;
+
+	file = L"_Texture/" + file;
+
+	assert(PathFileExists(file.c_str()));
+
+	if (_textures.count(file) > 0)
+	{
+
+		_textures.erase(file);
+	}
+
+	wstring extension = GetExtension(file);
+
+	ScratchImage image;
+
+	if (extension == L"tga")
+		LoadFromTGAFile(file.c_str(), nullptr, image);
+	else if (extension == L"dds")
+		LoadFromDDSFile(file.c_str(), DDS_FLAGS_NONE, nullptr, image);
+	else
+		LoadFromWICFile(file.c_str(), WIC_FLAGS_NONE, nullptr, image);
+
+
+	ID3D11ShaderResourceView* srv = nullptr;
+
+	CreateShaderResourceView(
+		DEVICE,
+		image.GetImages(),
+		image.GetImageCount(),
+		image.GetMetadata(),
+		&srv
+	);
+
+	_textures[file] = new Texture(srv, image);
+	_textures[file]->_path = path;
 
 	return _textures[file];
 }
@@ -82,3 +129,4 @@ vector<Vector4> Texture::ReadPixels()
 
 	return colors;
 }
+

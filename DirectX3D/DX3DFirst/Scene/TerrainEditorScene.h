@@ -12,8 +12,9 @@ public:
 	virtual void Render() override;
 	virtual void PostRender() override;
 
+	void RawData();
+
 private:
 	TerrainEditor* _terrainEditor;
-	Vector3 _pickedPostion;
 };
 

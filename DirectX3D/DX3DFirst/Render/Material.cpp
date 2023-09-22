@@ -105,7 +105,6 @@ void Material::PostRender()
 
 void Material::SelectMap()
 {
-#define DIALOG  ImGuiFileDialog::Instance()
 
     if (ImGui::BeginChild(_ID.c_str(), ImVec2(100, 85), true))
     {

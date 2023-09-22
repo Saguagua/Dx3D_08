@@ -177,6 +177,21 @@
     <ClInclude Include="_Include\ImGuiFileDialogConfig.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
+    <ClInclude Include="Render\Shader\ComputeShader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Buffer\RawBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Render\Buffer\StructuredBuffer.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\BinaryWriter.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Utility\BinaryReader.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -296,6 +311,21 @@
     <ClCompile Include="_Include\ImGuiFileDialog.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Render\Shader\ComputeShader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Buffer\RawBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Render\Buffer\StructuredBuffer.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\BinaryWriter.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Utility\BinaryReader.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="__Others\DX3DFirst.rc">
@@ -396,6 +426,10 @@
     <FxCompile Include="_Shader\PixelSpecular.hlsl" />
     <FxCompile Include="_Shader\VertexNormalMapping.hlsl" />
     <FxCompile Include="_Shader\PixelNormalMapping.hlsl" />
+    <FxCompile Include="_Shader\ByteAddress.hlsl" />
+    <FxCompile Include="_Shader\ComputePicking.hlsl" />
+    <FxCompile Include="_Shader\VertexTerrainBrush.hlsl" />
+    <FxCompile Include="_Shader\PixelTerrainBrush.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <Library Include="_Library\DirectXTex.lib" />

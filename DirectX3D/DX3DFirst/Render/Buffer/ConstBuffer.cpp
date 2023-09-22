@@ -42,6 +42,13 @@ void ConstBuffer::SetPSBuffer(UINT slot)
     DC->PSSetConstantBuffers(slot, 1, &_constBuffer);
 }
 
+void ConstBuffer::SetCSBuffer(UINT slot)
+{
+    UpdateSubresource();
+
+    DC->CSSetConstantBuffers(slot, 1, &_constBuffer);
+}
+
 void ConstBuffer::UpdateSubresource()
 {
     //DC->UpdateSubresource(_constBuffer, 0, nullptr, _data, 0, 0); 편하지만 데이터 갱신이 느리다

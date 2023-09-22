@@ -11,6 +11,8 @@ Shader::~Shader()
 VertexShader* Shader::GetVS(wstring path)
 {
 	path = L"_Shader/Vertex" + path + L".hlsl";
+
+	assert(PathFileExists(path.c_str()));
 	
 	if (_shaders.count(path) > 0)
 		return (VertexShader*)_shaders[path];
@@ -26,12 +28,28 @@ PixelShader* Shader::GetPS(wstring path)
 {
 	path = L"_Shader/Pixel" + path + L".hlsl";
 
+	assert(PathFileExists(path.c_str()));
+
 	if (_shaders.count(path) > 0)
 		return (PixelShader*)_shaders[path];
 
 	_shaders[path] = new PixelShader(path);
 
 	return (PixelShader*)_shaders[path];
+}
+
+ComputeShader* Shader::GetCS(wstring path)
+{
+	path = L"_Shader/" + path + L".hlsl";
+
+	assert(PathFileExists(path.c_str()));
+
+	if (_shaders.count(path) > 0)
+		return (ComputeShader*)_shaders[path];
+
+	_shaders[path] = new ComputeShader(path);
+
+	return (ComputeShader*)_shaders[path];
 }
 
 void Shader::Delete()

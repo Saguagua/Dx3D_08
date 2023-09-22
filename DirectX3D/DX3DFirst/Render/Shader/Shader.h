@@ -7,6 +7,7 @@ protected:
 public:
 	static class VertexShader* GetVS(wstring path);
 	static class PixelShader* GetPS(wstring path);
+	static class ComputeShader* GetCS(wstring path);
 
 	static void Delete();
 

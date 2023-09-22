@@ -16,3 +16,14 @@ void VertexBuffer::IASetBuffer(D3D11_PRIMITIVE_TOPOLOGY type)
     // 단점 : 계단현상이 일어난다
     DC->IASetVertexBuffers(0, 1, &_vertexBuffer, &_stride, &_offset);
 }
+
+void VertexBuffer::UpdateVertex(void* data, UINT count)
+{
+    /*DC->Map(_vertexBuffer, 0, D3D11_MAP_WRITE_DISCARD, 0, &_subResource);
+
+    memcpy(_subResource.pData, _data, _dataSize);
+
+    DC->Unmap(_vertexBuffer, 0);*/
+
+    DC->UpdateSubresource(_vertexBuffer, 0, nullptr, data, _stride, count);
+}

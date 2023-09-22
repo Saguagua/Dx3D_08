@@ -7,6 +7,11 @@ TerrainEditorScene::TerrainEditorScene()
 	_terrainEditor->GetMaterial()->SetDiffuseMap(L"Landscape/FieldStone_DM.tga");
 	_terrainEditor->GetMaterial()->SetSpecularMap(L"Landscape/FieldStone_SM.tga");
 	_terrainEditor->GetMaterial()->SetNormalMap(L"Landscape/FieldStone_NM.tga");
+	//RawData();
+
+	BinaryWriter data(L"Data");
+	data.WriteData(10);
+	data.WriteData(10.0f);
 }
 
 TerrainEditorScene::~TerrainEditorScene()
@@ -17,8 +22,7 @@ TerrainEditorScene::~TerrainEditorScene()
 void TerrainEditorScene::Update()
 {
 	_terrainEditor->Update();
-	if (KEY_DOWN(VK_LBUTTON))
-		_terrainEditor->Picking(&_pickedPostion);
+	
 }
 
 void TerrainEditorScene::PreRender()
@@ -34,7 +38,63 @@ void TerrainEditorScene::PostRender()
 {
 	_terrainEditor->Debug();
 	_terrainEditor->GetMaterial()->SelectMap();
+}
 
+void TerrainEditorScene::RawData()
+{
+	ComputeShader* shader = Shader::GetCS(L"ByteAddress");
 
-	ImGui::Text("PickPos : %.001f, %.001f, %.001f", _pickedPostion.x, _pickedPostion.y, _pickedPostion.z);
+	struct Output
+	{
+		UINT groupID[3];
+		UINT groupThreadID[3];
+		UINT dispatchThreadID[3];
+		UINT groupIndex;
+	};
+
+	UINT size = 10 * 8 * 3 * 2;
+
+	Output* output = new Output[size];
+
+	RawBuffer* buffer = new RawBuffer(nullptr, sizeof(Output) * size);
+
+	ID3D11UnorderedAccessView* uav = buffer->GetUAV();
+
+	shader->SetShader();
+	
+	DC->CSSetUnorderedAccessViews(0, 1, &uav, nullptr);
+	DC->Dispatch(2, 1, 1); //Compute Shader의 시작-> 쓰레드 그룹의 갯수를 알려준다
+
+	buffer->Copy(output, sizeof(Output)* size);
+
+	FILE* file;
+	fopen_s(&file, "_TextData/RawTest.csv", "w");
+
+	for (size_t i = 0; i < size; i++)
+	{
+		fprintf
+		(
+			file,
+			"%d, %d,%d,%d, %d,%d,%d, %d,%d,%d, %d,\n",
+			i,
+			output[i].groupID[0],
+			output[i].groupID[1],
+			output[i].groupID[2],
+			output[i].groupThreadID[0],
+			output[i].groupThreadID[1],
+			output[i].groupThreadID[2],
+			output[i].dispatchThreadID[0],
+			output[i].dispatchThreadID[1],
+			output[i].dispatchThreadID[2],
+			output[i].groupIndex
+		);
+	}
+
+	//논리 프로세스는 쓰레드 그룹
+
+	fclose(file);
+
+	delete buffer;
+
+	delete output;
 }
