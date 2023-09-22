@@ -1,0 +1,21 @@
+#pragma once
+class BinaryReader
+{
+public:
+	BinaryReader(wstring file);
+	~BinaryReader();
+
+	int ReadInt();
+	UINT ReadUINT();
+	float ReadFloat();
+	string ReadString();
+	wstring ReadWString();
+
+	Vector3 ReadVector3();
+
+	void ReadData(OUT void** data, UINT dataSize);
+	bool Succeeded();
+private:
+	HANDLE _file = nullptr;
+	DWORD _size = 0;
+};
