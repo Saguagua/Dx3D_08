@@ -1,3 +1,7 @@
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\ModelExporter\ModelExporter.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\ModelExporter.obj
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Model\ModelMesh.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\ModelMesh.obj
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Model\ModelReader.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\ModelReader.obj
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Scene\ModelExportScene.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\ModelExportScene.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\BinaryReader.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\BinaryReader.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\BinaryWriter.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\BinaryWriter.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Render\Buffer\RawBuffer.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\RawBuffer.obj
@@ -38,6 +42,7 @@ C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\Terrain.c
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Scene\TerrainEditorScene.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\TerrainEditorScene.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Object\LandScape\TerrainEditor.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\TerrainEditor.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\Keyboard.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Keyboard.obj
+C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\MyMath.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\MyMath.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\Time.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Time.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\Utility.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Utility.obj
 C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\Utility\Vector3.cpp;C:\Users\user\Desktop\SJHGit\Dx3D\DirectX3D\DX3DFirst\x64\Debug\Vector3.obj

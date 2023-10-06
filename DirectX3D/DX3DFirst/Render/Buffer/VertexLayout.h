@@ -75,3 +75,14 @@ struct VertexTextureNormalTangent
 	Vector3 _normal = {};
 	Vector3 _tangent = {};
 };
+
+struct VertexTextureNormalTangentAlpha
+{
+	VertexTextureNormalTangentAlpha() {}
+
+	Vector3 _pos = {};
+	Vector2 _uv = {};
+	Vector3 _normal = {};
+	Vector3 _tangent = {};
+	float _alpha[4] = {};
+};

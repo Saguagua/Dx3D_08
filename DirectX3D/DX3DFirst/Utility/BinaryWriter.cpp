@@ -3,7 +3,9 @@
 
 BinaryWriter::BinaryWriter(wstring file)
 {
-	file = L"_TextData/" + file;
+
+	if (!StartsWith(file, L"_"))
+		file = L"_TextData/" + file;
 
 	_file = CreateFile
 	(
@@ -60,6 +62,14 @@ void BinaryWriter::WriteData(Vector3 data)
 	WriteData(data.x);
 	WriteData(data.y);
 	WriteData(data.z);
+}
+
+void BinaryWriter::WriteData(Vector4 data)
+{
+	WriteData(data.x);
+	WriteData(data.y);
+	WriteData(data.z);
+	WriteData(data.w);
 }
 
 void BinaryWriter::WriteData(void* data, UINT dataSize)

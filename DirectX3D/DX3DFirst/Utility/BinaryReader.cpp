@@ -4,7 +4,8 @@
 
 BinaryReader::BinaryReader(wstring file)
 {
-	file = L"_TextData/" + file;
+	if (!StartsWith(file, L"_"))
+		file = L"_TextData/" + file;
 
 	_file = CreateFile
 	(
@@ -83,6 +84,18 @@ Vector3 BinaryReader::ReadVector3()
 	data.x = ReadFloat();
 	data.y = ReadFloat();
 	data.z = ReadFloat();
+
+	return data;
+}
+
+Vector4 BinaryReader::ReadVector4()
+{
+	Vector4 data;
+
+	data.x = ReadFloat();
+	data.y = ReadFloat();
+	data.z = ReadFloat();
+	data.w = ReadFloat();
 
 	return data;
 }

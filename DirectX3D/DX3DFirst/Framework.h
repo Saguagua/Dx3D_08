@@ -47,6 +47,10 @@ using namespace DirectX;
 
 #pragma comment(lib, "shlwapi.lib")
 
+#include <assimp/Importer.hpp>
+#include <assimp/scene.h>
+#include <assimp/postprocess.h>
+
 #define WIN_WIDTH 1280.0f
 #define	WIN_HEIGHT 720.0f
 
@@ -69,12 +73,14 @@ typedef XMFLOAT2 Vector2;
 #include "Utility/Vector3.h"
 #include "Utility\Keyboard.h"
 #include "Utility\Time.h"
+#include "Utility\MyMath.h"
 #include "Utility\Utility.h"
 #include "Utility\BinaryWriter.h"
 #include "Utility\BinaryReader.h"
 #include "Object/Transform.h"
 
 using namespace Utility;
+using namespace MyMath;
 
 #include "System/Device.h"
 
@@ -114,12 +120,21 @@ using namespace Utility;
 #include "Object\LandScape\TerrainEditor.h"
 
 #include "Object/Robot/Robot.h"
+#include "ModelExporter\ModelType.h"
+#include "ModelExporter\ModelExporter.h"
+
+#include "Model/ModelMesh.h"
+#include "Model\ModelReader.h"
+
 
 #include "Scene/Scene.h"
 #include "Scene/TutorialScene.h"
 #include "Scene\TextureScene.h"
 #include "Scene\TerrainScene.h"
 #include "Scene\TerrainEditorScene.h"
+#include "Scene\ModelExportScene.h"
+
+
 #include "MainGame.h"
 
 

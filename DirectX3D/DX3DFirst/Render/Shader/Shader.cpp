@@ -10,6 +10,8 @@ Shader::~Shader()
 
 VertexShader* Shader::GetVS(wstring path)
 {
+	wstring key = path;
+
 	path = L"_Shader/Vertex" + path + L".hlsl";
 
 	assert(PathFileExists(path.c_str()));
@@ -20,12 +22,16 @@ VertexShader* Shader::GetVS(wstring path)
 	//static은 강제 dynamic은 안되면 nullptr 반환
 
 	_shaders[path] = new VertexShader(path);
+	_shaders[path]->_path = key;
+
 
 	return (VertexShader*)_shaders[path];
 }
 
 PixelShader* Shader::GetPS(wstring path)
 {
+	wstring key = path;
+
 	path = L"_Shader/Pixel" + path + L".hlsl";
 
 	assert(PathFileExists(path.c_str()));
@@ -34,12 +40,15 @@ PixelShader* Shader::GetPS(wstring path)
 		return (PixelShader*)_shaders[path];
 
 	_shaders[path] = new PixelShader(path);
+	_shaders[path]->_path = key;
 
 	return (PixelShader*)_shaders[path];
 }
 
 ComputeShader* Shader::GetCS(wstring path)
 {
+	wstring key = path;
+
 	path = L"_Shader/" + path + L".hlsl";
 
 	assert(PathFileExists(path.c_str()));
@@ -48,6 +57,7 @@ ComputeShader* Shader::GetCS(wstring path)
 		return (ComputeShader*)_shaders[path];
 
 	_shaders[path] = new ComputeShader(path);
+	_shaders[path]->_path = key;
 
 	return (ComputeShader*)_shaders[path];
 }

@@ -5,7 +5,7 @@ MainGame::MainGame()
 {
 	Initialize();
 
-	_scene = new TerrainEditorScene();
+	_scene = new ModelExportScene();
 }
 
 MainGame::~MainGame()

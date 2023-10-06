@@ -23,6 +23,16 @@ public:
 
 	void SelectMap();
 
+	void Save(wstring file);
+	void Load(wstring file);
+
+	void SaveDialog();
+	void LoadDialog();
+
+	void SetLabel(string label) { _label = label; }
+
+	string GetLabel() { return _label; }
+
 private:
 
 	//Shader -> Material
@@ -37,6 +47,7 @@ private:
 
 	string _projDir;
 
-	static string _ID;
+	static int _ID;
+	string _label = "";
 };
 

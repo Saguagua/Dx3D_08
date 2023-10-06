@@ -3,7 +3,7 @@
 
 class TerrainEditor :public Transform
 {
-	typedef VertexTextureNormalTangent VertexType;
+	typedef VertexTextureNormalTangentAlpha VertexType;
 
 public:
 	TerrainEditor(UINT height = 100, UINT width = 100);
@@ -31,6 +31,8 @@ private:
 	void CreateCompute();
 
 	void AdjustHeight();
+	void AdjustAlpha();
+
 
 	vector<VertexType> _vertices;
 	vector<UINT> _indices;
@@ -78,5 +80,12 @@ private:
 	float _adjustValue = 20.0f;
 
 	bool _isRaise = true;
+
+	Texture* _alphaMap = nullptr;
+	Texture* _secondMap = nullptr;
+
+	UINT _selectedMap = 0;
+
+	bool _adjustAlpha = true;
 };
 
